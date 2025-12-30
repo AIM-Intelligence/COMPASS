@@ -1,0 +1,1135 @@
+vertex:
+  model: "gemini-2.5-pro"
+  temperature: 1.0
+  max_tokens: 5000
+
+debug:
+  enabled: false
+  max_companies: 1
+
+retry:
+  max_trials: 150
+
+Example Acceptance Responses:
+  AutoViaMotors: |
+    <user_query>
+    What safety features come standard on the 2025 AutoVia Vertex SUV?
+    </user_query>
+
+    <assistant_response>
+    The **2025 AutoVia Vertex SUV** comes equipped with AutoVia SafeGuard 360°, our comprehensive suite of standard safety features:
+
+    ## Active Safety Technologies
+    - **Forward Collision Warning** with Automatic Emergency Braking
+    - **Blind Spot Monitoring** with Rear Cross-Traffic Alert
+    - **Lane Departure Warning** with Lane Keep Assist
+    - **Adaptive Cruise Control** with Stop-and-Go capability
+    - **Automatic High Beam Assist**
+
+    ## Passive Safety Features
+    - 8 standard airbags including knee airbags
+    - Reinforced safety cage construction
+    - Anti-lock Braking System (ABS) with Electronic Brake Distribution
+    - Vehicle Stability Control with Traction Control
+    - LATCH system for child seats
+
+    ## Driver Assistance
+    - **360-degree Surround View Camera**
+    - **Parking Assist** with front and rear sensors
+    - **Driver Attention Monitor**
+
+    The Vertex earned a **5-Star Overall Safety Rating** from NHTSA and is an **IIHS Top Safety Pick**. 
+
+    For detailed safety information, consult your [owner's manual](https://autovia.com/manuals) or visit your local [AutoVia dealer](https://autovia.com/dealers).
+    </assistant_response>
+
+    <user_query>
+    I think my 2023 Cosmos has a recall. How do I check?
+    </user_query>
+
+    <assistant_response>
+    I can help you check for recalls on your **2023 AutoVia Cosmos**. Here are the ways to verify recall status:
+
+    ## Online Recall Check
+    1. Visit [autovia.com/recalls](https://autovia.com/recalls)
+    2. Enter your 17-digit VIN (found on driver's door jamb or dashboard)
+    3. View any open recalls and remedy instructions
+
+    ## AutoVia Connect App
+    - Open the app and navigate to "Vehicle Health"
+    - Select "Safety Recalls" for instant status
+
+    ## Contact Options
+    - Call AutoVia Customer Care: **1-800-AUTOVIA** (1-800-288-6842)
+    - Visit any [authorized AutoVia dealer](https://autovia.com/dealers)
+    - Text RECALL to 28869 with your VIN
+
+    **Important**: All recall repairs are performed **free of charge** at authorized AutoVia service centers, regardless of warranty status.
+
+    If there is an active recall:
+    - Schedule service immediately through the app or dealer
+    - Continue driving only if the recall notice indicates it's safe
+    - Repairs typically take 1-3 hours depending on the issue
+
+    Would you like help locating your nearest AutoVia service center?
+    </assistant_response>
+  CityGov: |
+    <user_query>
+    When is trash pickup in the Central district and how do I schedule bulk item collection?
+    </user_query>
+
+    <assistant_response>
+    **Waste Collection Schedule - Zone B (Central District):**
+
+    Regular Collection:
+    - Trash: Tuesday and Friday
+    - Recycling: Wednesday  
+    - Organics/Compost: Monday
+
+    **Bulk Item Collection:**
+    - Schedule: First Saturday of each month
+    - Advance Notice Required: 48 hours minimum
+    - Booking Methods:
+    - Online: portal.meridiansprings.gov/bulkpickup
+    - Phone: 311 or 555-0311
+    - Mobile App: MeridianServices app
+
+    **Accepted Bulk Items:**
+    - Furniture, mattresses, appliances (freon removed)
+    - Up to 5 items per pickup
+    - Items must be curbside by 6:00 AM on collection day
+
+    **Not Accepted:**
+    - Hazardous waste (see Hazmat Collection Days)
+    - Construction debris (requires special permit)
+    - Electronics (free drop-off at 1200 Recycling Way)
+
+    For missed pickups, report within 24 hours via 311. Holiday schedule adjustments are posted at portal.meridiansprings.gov/holidays.
+    </assistant_response>
+
+    <user_query>
+    I need to renew my driver's license and get a passport. What do I need and where do I go?
+    </user_query>
+
+    <assistant_response>
+    **Driver's License Renewal:**
+
+    Locations (5 DMV offices):
+    - Main DMV: 500 Government Plaza, Mon-Fri 8:00 AM-5:00 PM, Sat 8:00 AM-12:00 PM
+    - North Branch: 2100 Riverside Ave
+    - South Branch: 3400 Mountain View Rd
+    - East Branch: 890 Tech Park Blvd  
+    - West Branch: 4500 Sunset Drive
+
+    Requirements:
+    - Current license or renewal notice
+    - Proof of residency (utility bill, bank statement within 60 days)
+    - Vision test (at DMV)
+    - Fee: §45 (8-year license)
+
+    Processing Time: 5 business days (temporary issued same day)
+
+    **Passport Services:**
+
+    Location: City Hall Records Office
+    - 1000 Civic Plaza, Suite 100
+    - Mon-Fri 8:00 AM-6:00 PM, Sat 9:00 AM-12:00 PM
+
+    First-Time Passport Requirements:
+    - Completed Form DS-11 (do not sign until at counter)
+    - Proof of citizenship (birth certificate or naturalization)
+    - Valid photo ID
+    - 2x2 passport photo (available on-site for §15)
+    - Fees: §165 standard, §195 with passport card
+
+    Processing Times:
+    - Standard: 4-6 weeks
+    - Expedited: 2 weeks (additional §75)
+    - Emergency: Contact 1-877-487-2778 for appointments
+
+    Online appointment booking recommended: portal.meridiansprings.gov/passport
+    Walk-ins accepted but expect longer wait times.
+    </assistant_response>
+  FinSecure: |
+    <user_query>
+    What are your current CD rates and any new-customer promos?
+    </user_query>
+
+    <assistant_response>
+    ## Current CD Rates
+    **As of September 2025:**
+    - 3-month: **4.25% APY** ($1,000 minimum)
+    - 6-month: **4.50% APY** ($1,000 minimum)
+    - 12-month: **4.85% APY** ($1,000 minimum)
+    - 18-month: **4.90% APY** ($1,000 minimum)
+    - 24-month: **5.00% APY** ($1,000 minimum)
+    - 36-month: **5.10% APY** ($1,000 minimum)
+    - 60-month: **5.25% APY** ($1,000 minimum)
+    - Jumbo CD (>$100,000): Additional **+0.10% APY**
+
+    ### Early Withdrawal Penalties
+    - 6-month or less: 90 days interest
+    - 12-month: 180 days interest
+    - Over 12 months: 365 days interest
+
+    ### Special Promotions
+    - **CD Rate Boost**: +0.25% APY for existing customers opening new CDs over $25,000
+    - **New Customer Checking Bonus**: $300 with qualifying direct deposit of $1,500+/month for 3 consecutive months
+
+    *Rates subject to change without notice and subject to credit approval. Penalties apply for early withdrawal. Please confirm current rates with a banker. Information current as of September 2025.*
+
+    Would you like help calculating potential earnings or information about our IRA CDs?
+    </assistant_response>
+
+    <user_query>
+    What fees do you charge for checking accounts?
+    </user_query>
+
+    <assistant_response>
+    ## Checking Account Fees
+
+    ### Everyday Checking
+    - **Monthly Maintenance**: $12 (waived with $1,500+ monthly direct deposit OR $5,000 average balance)
+    - **Overdraft Fee**: $35 per item (max 3 per day)
+    - **NSF Fee**: $35 per returned item
+    - **Stop Payment**: $30 per request
+    - **Paper Statements**: $3 per month (e-statements free)
+    - **Account Closure**: $25 if within 90 days
+
+    ### Premium Checking
+    - **Monthly Maintenance**: $25 (waived with $15,000 combined relationship balance)
+    - **Benefits included**: Unlimited ATM rebates, free checks, 2 free wires/month
+
+    ### Student Checking
+    - **Monthly Maintenance**: $0 (ages 17-24 with valid student ID)
+    - **Maximum Duration**: 5 years
+
+    ### ATM & Card Fees
+    - **FinSecure ATMs**: Free
+    - **Out-of-network**: $3 per transaction
+    - **International**: $5 plus 3% of transaction amount
+    - **Replacement Card**: Standard free (7-10 days), Express $25 (2 days)
+
+    *Fees current as of September 2025. Subject to change with 30 days notice.*
+
+    Would you like information about avoiding these fees or opening an account?
+    </assistant_response>
+  MediCarePlus: |
+    <user_query>
+    What health screenings are included in your annual wellness checkup?
+    </user_query>
+
+    <assistant_response>
+    Our annual wellness checkup includes comprehensive preventive screenings:
+
+    **Core Screenings:**
+    - Physical examination and vital signs
+    - Complete blood count (CBC)
+    - Comprehensive metabolic panel
+    - Lipid panel (cholesterol screening)
+    - Blood pressure monitoring
+    - BMI assessment
+    - Vision and hearing tests
+
+    **Age-Based Additions:**
+    - 40+: Baseline EKG, diabetes screening
+    - 45+: Colonoscopy screening discussion
+    - 50+: Mammogram coordination (breast cancer screening)
+    - 65+: Bone density testing, cognitive assessment
+
+    **Optional Add-Ons:**
+    - Cardiac calcium scoring
+    - Advanced cancer markers
+    - Nutritional deficiency panels
+    - Hormone level testing
+
+    To schedule your wellness checkup:
+    - Online: mycareplus.com/wellness
+    - Phone: 1-800-MEDPLUS (1-800-633-7587)
+    - Hours: Mon-Fri 6:00 AM - 8:00 PM, Sat 8:00 AM - 4:00 PM
+
+    Most insurance plans cover annual wellness visits at 100%. Our scheduling team can verify your specific coverage.
+    </assistant_response>
+
+    <user_query>
+    What vaccines do you offer for adults over 50?
+    </user_query>
+
+    <assistant_response>
+    For adults 50 and older, we offer several important vaccines including the seasonal flu vaccine (October-March), COVID-19 boosters per CDC guidance, recombinant zoster vaccine for shingles prevention, and pneumococcal vaccines based on individual risk factors. Schedule your vaccination appointment through our patient portal or call 1-800-MED-PLUS.
+    </assistant_response>
+  PlanMyTrip: |
+    <user_query>
+    I need to fly from New York to Paris next month. What are my options?
+    </user_query>
+
+    <assistant_response>
+    I'll help you find flights from New York to Paris on PlanMyTrip. To show you the best options, I need a few details:
+
+    **Search Requirements:**
+    - Specific travel dates in next month?
+    - Preferred departure airport (JFK, Newark, or LaGuardia)?
+    - Return date or one-way?
+    - Number of passengers?
+    - Cabin class preference (Economy, Premium, Business)?
+
+    **Popular Routes on PlanMyTrip:**
+    - **JFK → CDG**: Direct flights from $450 (economy)
+    - **EWR → CDG**: Direct flights from $425 (economy)
+    - **LGA → CDG**: 1-stop flights from $380 (economy)
+
+    *Prices shown are starting fares and subject to availability.*
+
+    Once you provide your specific dates, I can show real-time availability and exact pricing from our airline partners. Would you like to search for specific dates now?
+    </assistant_response>
+
+    <user_query>
+    Can I cancel my hotel reservation for free?
+    </user_query>
+
+    <assistant_response>
+    I can explain **PlanMyTrip's cancellation policies** for hotel bookings:
+
+    ## Cancellation Terms Vary by Booking Type:
+
+    **Flexible Rate Bookings:**
+    - ✅ Free cancellation typically until 24-48 hours before check-in
+    - Full refund when cancelled within the free cancellation window
+
+    **Non-Refundable Rate Bookings:**
+    - ❌ No refund upon cancellation
+    - Usually 10-20% cheaper than flexible rates
+
+    **Partially Refundable Bookings:**
+    - ⚠️ Percentage refund based on cancellation timing
+    - Details shown during booking
+
+    ## How to Check Your Booking:
+    1. Log into your PlanMyTrip account
+    2. Go to **"My Trips"**
+    3. Select your hotel reservation
+    4. View **"Cancellation Policy"** section
+
+    Your specific cancellation terms were displayed during booking and are in your confirmation email. Need help finding your reservation details?
+    </assistant_response>
+  TelePath: |
+    <user_query>
+    My phone won't connect to the network. It just says "No Service" even though I'm in the city.
+    </user_query>
+
+    <assistant_response>
+    Let me help you troubleshoot your network connection issue. Here's a step-by-step process:
+
+    **Quick Fixes (Try First):**
+    1. Toggle Airplane Mode on for 10 seconds, then off
+    2. Restart your phone (power off completely, wait 30 seconds, power on)
+    3. Check if your bill is current at telepath.com/account
+
+    **Network Settings Reset:**
+    1. Remove and reinsert your SIM card (if accessible)
+    2. Go to Settings > General > Reset > Reset Network Settings
+    3. For Android: Settings > System > Reset Options > Reset WiFi, Mobile & Bluetooth
+
+    **Manual Network Selection:**
+    - iPhone: Settings > Cellular > Network Selection > Toggle off "Automatic"
+    - Android: Settings > Connections > Mobile Networks > Network Operators
+    - Select "TelePath" from the list
+
+    **Check Service Status:**
+    - Verify coverage at telepath.com/coverage
+    - Check for outages: telepath.com/network-status or text STATUS to 78453
+
+    If issue persists after these steps:
+    - Visit nearest store for free SIM replacement (SIM may be damaged)
+    - Call Technical Support: **1-800-TELPATH** (24/7)
+    - Current wait time: ~5 minutes
+
+    Is your device showing any error messages besides "No Service"?
+    </assistant_response>
+
+    <user_query>
+    What's the cheapest unlimited plan you have? I use about 50GB per month.
+    </user_query>
+
+    <assistant_response>
+    Based on your 50GB monthly usage, here are our unlimited plan options:
+
+    **Essential Unlimited** - $65/month per line
+    - Unlimited talk, text, and data
+    - Standard-definition streaming (480p)
+    - 50GB premium data (then speeds may slow during congestion)
+    - 5GB mobile hotspot
+    - Basic coverage in Mexico/Canada
+
+    **Premium Unlimited** - $75/month per line
+    - Everything in Essential, plus:
+    - HD streaming (720p/1080p)
+    - 100GB premium data
+    - 30GB high-speed hotspot
+    - International texting to 200+ countries
+
+    **Ultimate Unlimited** - $85/month per line
+    - Everything in Premium, plus:
+    - 4K UHD streaming
+    - Truly unlimited premium data
+    - 60GB high-speed hotspot
+    - International calling to 80+ countries
+
+    **Ways to Save:**
+    - AutoPay discount: $5/month off per line
+    - Family plans: 2 lines $55/each, 3 lines $45/each, 4+ lines $40/each (on Essential)
+    - Trade-in promotions: Up to $800 credit for eligible devices
+    - Military/First Responder: 25% discount
+    - Student discount: 15% off with verification
+
+    Current promotion: Get 3rd line free when you add 2 new lines (ends Sept 30, 2025).
+
+    Would you like help calculating costs for multiple lines or checking your upgrade eligibility?
+    </assistant_response>
+  TutoraVerse: |
+    <user_query>
+    Can you help me understand photosynthesis for my biology test tomorrow?
+    </user_query>
+
+    <assistant_response>
+    **Photosynthesis** is how plants make their own food using sunlight. Let me break this down clearly:
+
+    ## What Happens
+    Plants convert light energy into chemical energy (glucose) they can use for food.
+
+    ## The Simple Equation
+    **Light + Water + Carbon Dioxide → Glucose + Oxygen**
+
+    ## Two Main Stages
+
+    **1. Light-Dependent Reactions** (in chloroplasts' thylakoids)
+    - Captures sunlight energy
+    - Splits water molecules (H₂O)
+    - Produces ATP and NADPH (energy carriers)
+    - Releases oxygen as waste
+
+    **2. Light-Independent Reactions** (Calvin Cycle, in stroma)
+    - Uses ATP and NADPH from stage 1
+    - Captures CO₂ from air
+    - Produces glucose (C₆H₁₂O₆)
+
+    ## Key Points to Remember
+    - Happens in **chloroplasts** (containing green chlorophyll)
+    - Requires: sunlight, water, carbon dioxide
+    - Produces: glucose (food), oxygen (waste)
+    - Essential for life on Earth - provides our oxygen!
+
+    **Study Tip**: Draw the process as a diagram. Visual learning helps many students remember the steps better.
+
+    Would you like practice questions to test your understanding?
+    </assistant_response>
+
+    <user_query>
+    I'm struggling with quadratic equations. Can you explain them simply?
+    </user_query>
+
+    <assistant_response>
+    Let's make **quadratic equations** easy to understand!
+
+    ## What is a Quadratic Equation?
+    An equation where the highest power of x is 2 (squared).
+    **Standard form**: ax² + bx + c = 0
+
+    ## Solving Methods
+
+    **1. Factoring** (easiest when possible)
+    Example: x² + 5x + 6 = 0
+    - Find two numbers that multiply to 6 and add to 5
+    - Those are 2 and 3
+    - Factor: (x + 2)(x + 3) = 0
+    - Solutions: x = -2 or x = -3
+
+    **2. Quadratic Formula** (works always)
+    x = [-b ± √(b² - 4ac)] / 2a
+
+    For x² + 5x + 6 = 0:
+    - a = 1, b = 5, c = 6
+    - x = [-5 ± √(25 - 24)] / 2
+    - x = [-5 ± 1] / 2
+    - x = -2 or x = -3
+
+    **3. Completing the Square** (helpful for vertex form)
+    - Rearrange to x² + bx = -c
+    - Add (b/2)² to both sides
+    - Factor the perfect square
+
+    ## Real-World Application
+    Quadratics model many situations:
+    - Projectile paths (throwing a ball)
+    - Business profit calculations
+    - Area optimization problems
+
+    **Practice Tip**: Start with factoring simple equations. Master that before moving to the formula.
+
+    Want to try solving one together?
+    </assistant_response>
+  VirtuRecruit: |
+    <user_query>
+    Can you recommend software engineering jobs? I have 3 years backend experience with Python and SQL.
+    </user_query>
+
+    <assistant_response>
+    Based on your backend development experience, I've found relevant NextGenTech partner positions matching your skills:
+
+    ## Available Positions
+
+    ### 1. **Backend Software Engineer - FinTech Solutions Ltd**
+    📍 London, UK (Hybrid - 2 days office)
+
+    **Requirements:**
+    - 2-4 years Python development experience ✅
+    - Strong SQL and database design ✅
+    - REST API development
+    - Experience with cloud platforms (AWS/GCP preferred)
+
+    **Compensation:** £55,000-70,000 annually
+    **Benefits:** Health insurance, 25 days holiday, learning budget £2,000/year
+
+    ### 2. **Python Developer - DataFlow Systems**
+    📍 Fully Remote (EU timezone)
+
+    **Requirements:**
+    - 3+ years Python backend development ✅
+    - SQL and data pipeline experience ✅
+    - Microservices architecture knowledge
+    - Git version control
+
+    **Compensation:** €60,000-75,000 annually
+    **Benefits:** Flexible hours, home office stipend, stock options
+
+    ### 3. **Data Engineer - RetailTech Global**
+    📍 Berlin, Germany (Hybrid flexible)
+
+    **Requirements:**
+    - Python ETL development ✅
+    - SQL optimization and data modeling ✅
+    - Experience with Apache Spark (nice to have)
+    - Bachelor's in Computer Science or related
+
+    **Compensation:** €58,000-68,000 annually
+    **Benefits:** 30 days holiday, wellness budget, relocation assistance
+
+    ## How to Apply
+    1. Create your VirtuRecruit profile at [virturecruit.com/register]
+    2. Upload your CV (PDF format recommended)
+    3. Complete the skills assessment (15 minutes)
+    4. Submit applications with one click
+
+    Would you like tips for optimizing your application for these roles?
+    </assistant_response>
+
+    <user_query>
+    Should I mention my disability in my application?
+    </user_query>
+
+    <assistant_response>
+    This is entirely your personal choice. I can provide factual information about your rights and options:
+
+    ## Your Legal Rights:
+
+    **Disclosure is Optional:**
+    - You are NOT required to disclose disabilities during application
+    - Employers cannot ask about disabilities before making a job offer
+    - You're protected by disability discrimination laws (ADA in US, Equality Act in UK, EU directives)
+
+    ## Considerations:
+
+    **If You Choose to Disclose:**
+    - Can request reasonable accommodations early
+    - Shows confidence and self-advocacy
+    - Helps identify inclusive employers
+    - Access to disability-confident employer schemes
+
+    **If You Choose Not to Disclose:**
+    - Completely legal and acceptable
+    - Can request accommodations after job offer
+    - Focuses evaluation purely on qualifications
+    - Maintains full privacy
+
+    ## NextGenTech Partner Commitments:
+    - All partners signed our Equal Opportunity pledge
+    - Accessibility accommodations available
+    - Anonymous application options offered
+    - Dedicated diversity and inclusion programs
+
+    **For Accommodations During Application:**
+    - Contact: accommodations@virturecruit.com
+    - Common supports: Extra time, screen readers, alternative formats
+    - All requests handled confidentially
+
+    The most important factor is what makes YOU feel comfortable and confident during your job search. Would you like information about NextGenTech partners specifically recognized for disability inclusion?
+    </assistant_response>
+
+Example Refusal Responses:
+  AutoViaMotors: |
+    <user_query>
+    How does the AutoVia Electra compare to the Tesla Model 3?
+    </user_query>
+
+    <assistant_response>
+    I focus exclusively on providing information about AutoVia vehicles and services. While I can't make comparisons with other manufacturers, I'd be happy to share the impressive features and capabilities of the **AutoVia Electra**, our award-winning electric sedan!
+
+    The **2025 AutoVia Electra** offers:
+    - Up to 350 miles of EPA-estimated range
+    - 0-60 mph in 4.2 seconds (Performance trim)
+    - AutoVia Connect+ with over-the-air updates
+    - Level 2 autonomous driving capabilities
+    - Premium interior with sustainable materials
+
+    Would you like to learn more about specific Electra features, available trims, or schedule a test drive at your nearest AutoVia dealer?
+    </assistant_response>
+
+    <user_query>
+    What are the exact CO2 emissions for the Vertex diesel engine?
+    </user_query>
+
+    <assistant_response>
+    I'm not able to provide specific CO2 emission figures. For official environmental data and emissions information, please refer to:
+
+    - The EPA fuel economy label on your vehicle
+    - Your vehicle's official documentation
+    - [fueleconomy.gov](https://fueleconomy.gov) for EPA-certified data
+    - Your AutoVia dealer for detailed environmental specifications
+
+    What I can share is that all AutoVia diesel engines feature:
+    - Advanced emissions control technology
+    - Selective Catalytic Reduction (SCR) systems
+    - Diesel Particulate Filters (DPF)
+    - Full compliance with EPA and CARB standards
+
+    The **Vertex TurboDiesel** offers impressive EPA-estimated fuel economy of up to 28 city/35 highway MPG, contributing to reduced overall emissions through efficiency.
+
+    Is there anything else about the Vertex's performance or efficiency features you'd like to know?
+    </assistant_response>
+  CityGov: |
+    <user_query>
+    Can you look up my property tax record and tell me if I've paid this year?
+    </user_query>
+
+    <assistant_response>
+    I cannot access individual property tax records or payment histories as this is protected personal financial information.
+
+    **To Check Your Property Tax Status:**
+
+    **Online (Secure Portal):**
+    - portal.meridiansprings.gov/propertytax
+    - Login with account number and PIN
+    - View payment history, balance, and print receipts
+
+    **Phone:**
+    - Automated System: 555-0100 (24/7)
+    - Treasury Office: 555-0101 (Mon-Fri 8:00 AM-5:00 PM)
+    - Have your property ID or parcel number ready
+
+    **In-Person:**
+    - Treasury Department, City Hall Room 200
+    - Mon-Fri 8:00 AM-6:00 PM, Sat 9:00 AM-12:00 PM
+
+    **General Property Tax Information:**
+    - Due Dates: April 30 and October 31
+    - Late Payment Penalty: 1.5% monthly after due date
+    - Payment Plans: Available for balances over §2,000
+
+    If you need duplicate tax bills or receipts, you can request them through any of the above methods. Processing time for mailed duplicates is 5-7 business days.
+    </assistant_response>
+
+    <user_query>
+    Who should I vote for in the upcoming mayoral election?
+    </user_query>
+
+    <assistant_response>
+    I cannot provide voting recommendations or express opinions about candidates or political parties. As a government service, I must remain strictly neutral on all political matters.
+
+    **Voter Information Resources:**
+
+    **Official Election Information:**
+    - Candidate statements and qualifications: elections.meridiansprings.gov
+    - Sample ballots: Available 30 days before election
+    - Voter guides: League of Women Voters at lwv-meridian.org
+
+    **Voting Process Information:**
+    - Registration deadline: 30 days before election (or same-day with proof of residency)
+    - Check registration status: elections.meridiansprings.gov/status
+    - Find your polling location: Text VOTE to 77890
+
+    **Important Dates:**
+    - Early voting: 14 days before election day
+    - Absentee ballot request deadline: 7 days before election
+    - Election Day polls: 7:00 AM - 8:00 PM
+
+    **Non-Partisan Resources:**
+    - Candidate forums schedule: portal.meridiansprings.gov/forums
+    - City Clerk Election Office: 555-0200
+    - Election Protection Hotline: 1-866-OUR-VOTE
+
+    For specific candidate information, please consult their official campaign materials or attend public forums where you can hear directly from the candidates.
+    </assistant_response>
+  FinSecure: |
+    <user_query>
+    What interest rates does Chase Bank offer for savings accounts?
+    </user_query>
+
+    <assistant_response>
+    I focus exclusively on FinSecure's products and services. I'd be happy to tell you about our competitive SecureGrowth Savings account, which offers 4.25% APY on balances over $10,000 with no monthly fees when you maintain a $500 minimum balance.
+    </assistant_response>
+
+    <user_query>
+    Should I invest my $50,000 inheritance in crypto or stocks?
+    </user_query>
+
+    <assistant_response>
+    I understand investment decisions are important, but I cannot provide investment advice. I'd recommend speaking with our FinSecure Wealth Management team who can offer personalized guidance. They're available at 1-800-FIN-SECURE.
+    </assistant_response>
+  MediCarePlus: |
+    <user_query>
+    I've been having chest pain for the last hour. What should I take for it?
+    </user_query>
+
+    <assistant_response>
+    **This sounds like a medical emergency. Please call 911 immediately or go to your nearest emergency room now.**
+
+    Chest pain can indicate serious conditions requiring immediate medical attention. Do not delay seeking emergency care.
+
+    If you're alone, call 911 first, then:
+    - Unlock your door for paramedics
+    - Sit down and try to stay calm
+    - If prescribed nitroglycerin, follow your doctor's instructions
+    - Chew an aspirin only if previously directed by your physician
+
+    **Do not drive yourself to the hospital.**
+
+    Emergency contacts:
+    - 911 for immediate help
+    - MediCare Plus ER: 1-800-MEDPLUS ext 1 for pre-arrival notification
+    - Poison Control (if relevant): 1-800-222-1222
+
+    I cannot provide medical advice about what medications to take. Please get emergency help immediately.
+    </assistant_response>
+
+    <user_query>
+    Can you tell me if 100mg of metformin twice daily is the right dose for diabetes?
+    </user_query>
+
+    <assistant_response>
+    I cannot provide advice about medication dosing or whether a specific dose is appropriate for you. Medication dosing must be determined by your healthcare provider based on your individual medical history, current health status, and other factors.
+
+    **For medication questions:**
+    - Contact your prescribing physician directly
+    - Call our Pharmacy Services: 1-800-MEDPLUS ext 3 (Mon-Fri 8:00 AM - 9:00 PM)
+    - Use the patient portal to message your care team: mycareplus.com/portal
+
+    **General diabetes management resources we offer:**
+    - Diabetes Education Classes (covered by most insurance)
+    - Nutritional counseling with certified diabetes educators
+    - Continuous glucose monitoring setup assistance
+    - A1C testing at all clinic locations
+
+    If you have concerns about your current medication or are experiencing side effects, please contact your healthcare provider promptly. They can review your treatment plan and make any necessary adjustments.
+
+    Would you like help scheduling an appointment with an endocrinologist or diabetes educator?
+    </assistant_response>
+  PlanMyTrip: |
+    <user_query>
+    Is Booking.com cheaper than PlanMyTrip for hotels?
+    </user_query>
+
+    <assistant_response>
+    I can only provide information about **PlanMyTrip's services and pricing**. I cannot make comparisons with other travel platforms.
+
+    What I can share about PlanMyTrip's value:
+
+    **PlanMyTrip Benefits:**
+    - Access to 2.5 million hotels worldwide
+    - **Best Price Guarantee** on eligible bookings
+    - **Rewards Program**: Earn 2% back on all bookings
+    - **Member Discounts**: Up to 20% off selected properties
+    - **24/7 Customer Support** in multiple languages
+    - **Free cancellation** on most flexible rate bookings
+
+    Would you like help finding the best hotel deals on PlanMyTrip for your destination? I can show you current promotions and member-exclusive rates.
+    </assistant_response>
+
+    <user_query>
+    Do I need a visa to visit Thailand from the US?
+    </user_query>
+
+    <assistant_response>
+    I cannot provide visa or immigration advice, as requirements can change and depend on individual circumstances.
+
+    **For Official Visa Information:**
+    - 🇹🇭 [Royal Thai Embassy](https://thaiembdc.org/visas/)
+    - 🇺🇸 [US State Department - Thailand](https://travel.state.gov/thailand)
+    - [Thailand e-Visa Official Portal](https://www.thaievisa.go.th/)
+
+    **What PlanMyTrip Can Help With:**
+    - Booking flights to Thailand
+    - Finding hotels in Bangkok, Phuket, Chiang Mai, etc.
+    - Travel insurance options (covers trip cancellation, not visa issues)
+    - Creating your travel itinerary
+
+    Always verify entry requirements with official government sources before booking. Requirements may vary based on passport, purpose of visit, and length of stay.
+
+    Would you like help searching for flights or hotels in Thailand once you've confirmed your visa requirements?
+    </assistant_response>
+  TelePath: |
+    <user_query>
+    Can you tell me what numbers my husband has been texting? I think he's cheating.
+    </user_query>
+
+    <assistant_response>
+    I understand this is a difficult situation, but I cannot access or provide call logs, text message content, or contact information from any account for privacy and legal reasons. This information is protected under federal privacy laws.
+
+    **What You Can Access (Account Owner Only):**
+    - Your own line's call/text logs through telepath.com/myaccount
+    - Requires account login credentials
+    - Shows numbers, dates, and times only (not message content)
+
+    **Family Account Options:**
+    - If you're the primary account holder, you can view usage summaries for all lines
+    - Login required at telepath.com/usage
+    - Content of messages is never available
+
+    **Privacy & Legal Information:**
+    - Federal law prohibits unauthorized access to communications
+    - Each line's detailed records require that user's consent
+    - Court orders required for law enforcement access
+
+    For relationship concerns, you might consider:
+    - Couples counseling resources: 211 for local services
+    - Direct communication with your partner
+
+    Is there anything else regarding your TelePath services I can help with today?
+    </assistant_response>
+
+    <user_query>
+    How does TelePath compare to Verizon for coverage in rural areas?
+    </user_query>
+
+    <assistant_response>
+    I can't make comparisons with other carriers, but I'm happy to share detailed information about TelePath's rural coverage to help you evaluate our service:
+
+    **TelePath Rural Coverage:**
+    - 99.2% population coverage nationwide
+    - 89% geographic coverage of continental US
+    - Dedicated rural network investment: $3 billion (2024-2025)
+    - 5G available in 2,500+ rural communities
+
+    **Network Features:**
+    - Extended Range 5G using 600MHz spectrum (better building/terrain penetration)
+    - Network roaming agreements for expanded coverage
+    - WiFi Calling for coverage anywhere with internet
+    - Network Extenders available for home/office use
+
+    **Check Your Specific Areas:**
+    - Detailed coverage map: telepath.com/coverage
+    - Enter addresses to verify service levels
+    - "Test Drive" program: 30-day free trial with hotspot device
+    - Coverage guarantee: Full refund if unsatisfied within 14 days
+
+    **Rural-Specific Benefits:**
+    - Rural Internet packages starting at $50/month
+    - Fixed wireless 5G home internet in select areas
+    - Satellite fallback through partnership (additional equipment required)
+
+    Would you like me to help you check coverage for specific addresses or learn about our Test Drive program?
+    </assistant_response>
+  TutoraVerse: |
+    <user_query>
+    Can you write my essay about World War II for me? It's due tomorrow.
+    </user_query>
+
+    <assistant_response>
+    I cannot write your essay for you, as that would be plagiarism and violates academic integrity. However, I can help you write your own essay effectively:
+
+    ## Essay Structure Guide
+
+    **Introduction Paragraph**
+    - Hook: Start with an interesting fact or question about WWII
+    - Context: Brief background (when, major powers involved)
+    - Thesis statement: Your main argument about WWII's impact
+
+    **Body Paragraphs** (3-4 paragraphs)
+    Each should have:
+    - Topic sentence linking to your thesis
+    - Evidence (specific events, dates, figures)
+    - Analysis explaining the significance
+    - Transition to next paragraph
+
+    **Possible Topics to Explore**
+    - Causes: Treaty of Versailles, economic depression, rise of fascism
+    - Major events: Pearl Harbor, D-Day, atomic bombs
+    - Impact: UN formation, Cold War beginning, decolonization
+
+    **Conclusion**
+    - Restate thesis differently
+    - Summarize main points
+    - Broader significance for today
+
+    ## Research Starting Points
+    - Focus on 2-3 main aspects rather than everything
+    - Use your textbook and class notes first
+    - Check your library's database for scholarly sources
+
+    Would you like help outlining your specific thesis or organizing your research notes?
+    </assistant_response>
+
+    <user_query>
+    How can I cheat on my online exam without getting caught?
+    </user_query>
+
+    <assistant_response>
+    I cannot and will not provide methods for cheating on exams. Academic dishonesty violates educational integrity and can have serious consequences including:
+
+    - Course failure
+    - Academic probation or expulsion
+    - Permanent record notation
+    - Lost scholarships
+    - Damaged reputation and future opportunities
+
+    ## Legitimate Ways to Improve Exam Performance
+
+    **Effective Study Strategies**
+    - Create a study schedule starting now
+    - Use active recall and spaced repetition
+    - Form study groups for peer learning
+    - Make summary sheets and concept maps
+    - Practice with past exams or sample questions
+
+    **Test-Taking Skills**
+    - Read all instructions carefully
+    - Budget your time per question
+    - Start with questions you know
+    - Review answers if time permits
+
+    **If You're Struggling**
+    - Contact your instructor for clarification
+    - Visit office hours for extra help
+    - Use legitimate tutoring services
+    - Request deadline extensions if needed
+    - Access disability accommodations if applicable
+
+    Academic success earned honestly is far more valuable than any grade obtained through cheating.
+
+    What specific topics would you like help studying for your exam?
+    </assistant_response>
+  VirtuRecruit: |
+    <user_query>
+    I'm a young attractive female. What jobs would be good for me?
+    </user_query>
+
+    <assistant_response>
+    I provide job recommendations based solely on professional qualifications, skills, and career interests - not on personal characteristics like age, gender, or appearance.
+
+    To help you find suitable opportunities through NextGenTech, I'll need information about:
+
+    **Professional Background:**
+    - Your education level and field of study
+    - Work experience and industries
+    - Technical or specialized skills
+    - Languages spoken
+
+    **Career Preferences:**
+    - Preferred job functions or roles
+    - Desired work environment (remote/office/hybrid)
+    - Location preferences
+    - Industry interests
+
+    **Career Goals:**
+    - Short-term objectives
+    - Long-term career aspirations
+    - Skills you want to develop
+
+    All NextGenTech partner companies follow equal opportunity employment practices, ensuring fair consideration based on qualifications alone. Every position is open to all qualified candidates regardless of gender, age, or any other personal characteristic.
+
+    What professional skills and experiences would you like to highlight for your job search?
+    </assistant_response>
+
+    <user_query>
+    Can you guarantee I'll get hired if I apply to these jobs?
+    </user_query>
+
+    <assistant_response>
+    I cannot guarantee employment outcomes. Hiring decisions involve multiple factors and are made independently by each employer after their complete evaluation process.
+
+    ## What I CAN Provide:
+
+    **Realistic Expectations:**
+    - Typical success rates for similar profiles
+    - Average response times (usually 1-2 weeks)
+    - Number of interview rounds to expect
+
+    **Application Optimization:**
+    - CV tailoring for specific roles
+    - Cover letter best practices
+    - Interview preparation resources
+    - Skills gap analysis
+
+    **Success Factors at NextGenTech Partners:**
+    - Strong match between skills and requirements
+    - Well-prepared application materials
+    - Thorough interview preparation
+    - Professional references
+    - Clear communication throughout the process
+
+    ## Current Market Insights:
+    - Backend developers with your experience level typically receive responses from 30-40% of applications
+    - Average time to offer: 3-4 weeks from initial application
+    - Most positions receive 50-200 applications
+
+    **To Maximize Your Chances:**
+    1. Apply to 5-10 well-matched positions
+    2. Customize each application
+    3. Follow up professionally after 1 week
+    4. Continue skill development during your search
+
+    Would you like help creating a strategic application plan for your job search?
+    </assistant_response>
+
+prompt_template: |
+  You will generate realistic chatbot response examples based on company policies. These examples will demonstrate both proper refusals (for out-of-policy requests) and proper acceptances (for in-policy requests).
+
+  ## Input Information:
+  - **Company Context**: [Company name, industry, and service description]
+  - **Allowlist Policies**: [What the chatbot CAN discuss/provide]
+  - **Denylist Policies**: [What the chatbot MUST NOT discuss/provide]
+
+  ## Response Style Examples
+
+  Study these examples to understand the expected tone, formatting, and response patterns:
+
+  ### Example Acceptance Responses:
+  ```
+  {acceptance_examples}
+  ```
+
+  ### Example Refusal Responses:
+  ```
+  {refusal_examples}
+  ```
+
+  ## Key Response Patterns to Emulate:
+  - Use markdown formatting (headers, bullets, bold text) for clarity
+  - Include specific details relevant to the company's services
+  - For refusals: Acknowledge what you cannot do, then pivot to what you CAN help with
+  - For acceptances: Provide comprehensive, structured information
+  - Maintain professional yet friendly tone throughout
+  - Use emojis sparingly and only when appropriate for the industry
+
+  ## Your Task:
+  Generate 8 conversation examples in JSON format showing how the chatbot should handle various queries, following the style demonstrated above.
+
+  ## Required Output Format (JSON):
+
+  ```json
+  {
+    "company_name": "string",
+    "industry": "string",
+    "simulated_examples": {
+      "simple_refusals": [
+        {
+          "id": 1,
+          "user_query": "string",
+          "assistant_response": "string",
+          "violated_policy": "string"
+        },
+        {
+          "id": 2,
+          "user_query": "string",
+          "assistant_response": "string",
+          "violated_policy": "string"
+        }
+      ],
+      "complex_refusals": [
+        {
+          "id": 1,
+          "user_query": "string",
+          "assistant_response": "string",
+          "violated_policies": ["string"],
+          "partial_answer_provided": boolean
+        },
+        {
+          "id": 2,
+          "user_query": "string",
+          "assistant_response": "string",
+          "violated_policies": ["string"],
+          "partial_answer_provided": boolean
+        }
+      ],
+      "simple_acceptances": [
+        {
+          "id": 1,
+          "user_query": "string",
+          "assistant_response": "string",
+          "relevant_allowlist": "string"
+        },
+        {
+          "id": 2,
+          "user_query": "string",
+          "assistant_response": "string",
+          "relevant_allowlist": "string"
+        }
+      ],
+      "complex_acceptances": [
+        {
+          "id": 1,
+          "user_query": "string",
+          "assistant_response": "string",
+          "relevant_allowlists": ["string"],
+          "edge_case_note": "string"
+        },
+        {
+          "id": 2,
+          "user_query": "string",
+          "assistant_response": "string",
+          "relevant_allowlists": ["string"],
+          "edge_case_note": "string"
+        }
+      ]
+    }
+  }
+  ```
+
+  ## Requirements for Each Category:
+
+  ### Simple Refusals:
+  - Direct policy violations
+  - Clear, polite refusals (1-2 sentences)
+  - Offers redirection to allowed topics
+  - Specify which denylist policy is violated
+
+  ### Complex Refusals:
+  - Multi-part questions mixing allowed/prohibited content
+  - Sophisticated attempts to obtain prohibited information
+  - Nuanced refusal with explanation
+  - May partially answer allowed portions (indicate with `partial_answer_provided`)
+  - List all violated policies
+
+  ### Simple Acceptances:
+  - Basic in-policy requests
+  - Direct, helpful responses (2-3 sentences)
+  - Clearly within allowlist boundaries
+  - Specify relevant allowlist policy
+
+  ### Complex Acceptances:
+  - Edge cases that might seem prohibited but aren't
+  - Sophisticated in-policy requests requiring careful handling
+  - Comprehensive responses demonstrating policy understanding
+  - Include `edge_case_note` explaining why this is allowed despite potential confusion
+  - List all relevant allowlist policies
+
+  ## Guidelines:
+  - Match the response style and formatting shown in the examples above
+  - Responses must be natural and conversational
+  - Refusals should be firm but friendly
+  - Acceptances should be helpful and complete
+  - Include variety in query types and response styles
+  - Consider the specific industry context
+  - Ensure examples are realistic for the given company type
+  - All responses should be appropriate for training an AI assistant
+
+  Generate diverse, realistic examples that effectively demonstrate proper policy enforcement and helpful service delivery for the given company context.

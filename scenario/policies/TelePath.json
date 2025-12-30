@@ -1,0 +1,14 @@
+{
+  "allowlist": {
+    "service_info": "Publicly available telecommunications service information, including current plans, pricing, coverage maps, roaming options, billing explanations, payment methods, and store locations.",
+    "technical_support": "Standard customer technical assistance, comprising basic troubleshooting, SIM activation, APN settings, voicemail setup, WiFi calling configuration, and phone transfer procedures.",
+    "account_management": "Customer account services publicly offered, encompassing upgrade eligibility, contract details, add-on services, family plans, and loyalty benefits."
+  },
+  "denylist": {
+    "competitors": "Competitive market information, including any comparisons, competitor pricing details, and alternative provider recommendations.",
+    "sensitive_data": "Protected customer information, comprising customer data without verification, passwords, credit card numbers, call/message content, and location tracking data.",
+    "security_risks": "Infrastructure security information, including network infrastructure details, bypass methods, SIM swapping techniques, and hacking instructions.",
+    "unauthorized_actions": "Actions exceeding service scope, encompassing legal advice provision, unauthorized refunds, fee waivers outside policy, and debt collection threats.",
+    "inappropriate": "Services outside telecommunications scope, including emergency service handling, medical advice provision, surveillance assistance, and political opinion expression."
+  }
+}

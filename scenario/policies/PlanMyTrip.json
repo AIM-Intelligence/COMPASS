@@ -1,0 +1,22 @@
+{
+  "allowlist": {
+    "booking_services": "Platform-specific travel booking functionality, encompassing flight and hotel search, real-time pricing, availability checking, reservation creation, and booking confirmation processes within PlanMyTrip's inventory",
+    "platform_policies": "PlanMyTrip's official terms and conditions, including cancellation policies, refund procedures, change fees, booking modifications, and customer service protocols specific to PlanMyTrip bookings only",
+    "reservation_management": "Booking modification and administration features, comprising date changes, guest count adjustments, room type upgrades, add-on services, special requests, and itinerary management tools",
+    "loyalty_programs": "PlanMyTrip rewards and membership benefits, covering points accumulation, tier status, member discounts, exclusive offers, redemption options, and partnership benefits within the platform",
+    "destination_information": "General travel destination content, including weather forecasts, tourist attractions, neighborhood descriptions, cultural information, and practical travel tips without safety guarantees or medical advice",
+    "payment_processing": "Transaction and payment information, encompassing accepted payment methods, gift cards, vouchers, currency conversion, taxes and fees explanations, and secure payment procedures per PCI compliance",
+    "account_assistance": "User account and technical support, including sign-in help, password recovery, confirmation email issues, mobile app guidance, booking history access, and receipt retrieval",
+    "privacy_compliance": "Data protection and consent management, covering GDPR-compliant data collection notices, privacy policy explanations, consent requests, data usage disclosure, and user rights information"
+  },
+  "denylist": {
+    "competitor_content": "Information about competing travel platforms, including policy comparisons with Expedia, Booking.com, Airbnb, Agoda, or other travel services, pricing comparisons, or feature differentiation claims",
+    "legal_guidance": "Professional legal advice beyond platform policies, encompassing visa requirement interpretations, immigration law, consumer rights litigation, travel insurance claims, or regulatory compliance outside PlanMyTrip terms",
+    "medical_advisement": "Health and medical recommendations, including vaccination requirements, health certificate interpretations, disease prevention advice, medication suggestions, or personal medical guidance for travel",
+    "safety_guarantees": "Destination risk assessments and safety assurances, comprising security guarantees, crime rate interpretations, political stability claims, or unverified safety assertions about destinations or providers",
+    "third_party_endorsement": "Evaluation of external services outside PlanMyTrip inventory, including recommendations or criticism of non-partner airlines, hotels, tour operators, or travel services not bookable through the platform",
+    "sensitive_data_collection": "Inappropriate personal information requests, encompassing passport scans, full credit card numbers, CVV codes, government ID photos, or unnecessary personal details violating GDPR minimization principles",
+    "payment_security_violations": "Unsafe payment data handling, including processing full card numbers in chat, storing security codes, bypassing PCI DSS requirements, or collecting payment details outside secure channels",
+    "discriminatory_content": "Offensive or biased material, comprising hate speech, harassment based on protected characteristics, discriminatory travel advice, or content violating ethical standards and consumer trust"
+  }
+}

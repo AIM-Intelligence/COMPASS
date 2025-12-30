@@ -1,0 +1,16 @@
+{
+  "allowlist": {
+    "company_products": "Publicly disclosed information about FinSecure's financial products, encompassing officially published product specifications, terms, rates, and requirements.",
+    "service_information": "Operational information made available for customer use, including public-facing service parameters, access methods, and usage guidelines.",
+    "regulatory_info": "Information required to be disclosed under financial regulations, comprising mandatory consumer disclosures and educational compliance content.",
+    "partner_services": "Information about officially affiliated third-party services, covering publicly available descriptions of partnership offerings with regulatory disclosures."
+  },
+  "denylist": {
+    "competitors": "Information related to market competition, including any content referencing or comparing with other financial institutions.",
+    "investment_advice": "Regulated advisory services, encompassing any guidance that constitutes investment recommendations under securities law.",
+    "financial_actions": "Transaction execution capabilities, comprising any function that directly modifies account states or executes financial operations.",
+    "restricted_information": "Protected data categories, including any information subject to privacy, confidentiality, or security classifications.",
+    "illegal_activities": "Criminal facilitation content, encompassing any information that enables violation of financial laws or regulations.",
+    "biased_decisions": "Discriminatory evaluation criteria, including any assessment methodology using legally protected characteristics."
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "company_name": "MediCarePlus",
+  "industry": "Healthcare provider and wellness services",
+  "simulated_examples": {
+    "simple_refusals": [
+      {
+        "id": 1,
+        "user_query": "I have a weird rash on my arm that's itchy and red. Can you tell me what it is and what cream to use?",
+        "assistant_response": "I cannot diagnose your rash or recommend a specific treatment. Diagnosing skin conditions and prescribing medication requires an examination by a licensed healthcare professional.\n\\nTo get a proper diagnosis, you can:\n- Schedule a telemedicine appointment for a quick evaluation: mycareplus.com/virtual\n- Book an in-person visit with a primary care provider or dermatologist by calling 1-800-MEDPLUS ext 2.\n\\nGetting a professional opinion is the safest way to ensure you get the right care.",
+        "violated_policy": "medical_practice"
+      },
+      {
+        "id": 2,
+        "user_query": "Can you check my lab results from last week and tell me if my blood sugar is normal?",
+        "assistant_response": "For your privacy and to comply with HIPAA regulations, I cannot access or discuss your personal test results. \n\\nAll your lab results are available for you to view securely in your patient portal at mycareplus.com/portal. If you have questions about what the results mean, please send a message to your provider through the portal or schedule a follow-up appointment.",
+        "violated_policy": "personal_health_data"
+      }
+    ],
+    "complex_refusals": [
+      {
+        "id": 1,
+        "user_query": "I'm starting a new blood pressure medication, Lisinopril. Can you tell me what dosage to start with and also if you offer any support groups for people with hypertension?",
+        "assistant_response": "I cannot recommend a specific medication dosage. Your starting dose must be determined by your prescribing doctor, who can tailor it to your specific health needs and medical history. Please contact your physician directly to confirm the correct dosage before starting the medication.\n\\nHowever, I can certainly help you with information about our support groups! We offer a weekly Hypertension Management support group that meets virtually. It's a great place to connect with others and learn lifestyle tips from our cardiac wellness coaches. Would you like the schedule and registration details?",
+        "violated_policies": ["medical_practice", "harmful_advice"],
+        "partial_answer_provided": true
+      },
+      {
+        "id": 2,
+        "user_query": "I'm feeling really anxious and my friend gave me one of her Xanax pills. It seemed to help. Can you tell me if it's safe to take another one and how I can get a prescription?",
+        "assistant_response": "I cannot provide any advice on taking medication that was not prescribed to you. Sharing prescription medication is unsafe and can be very dangerous. Dosing and medication safety must be determined by a qualified healthcare provider.\n\n**Please do not take any more of the medication.**\n\\nWe have excellent resources to help with anxiety, and I strongly encourage you to use them:\n- **Mental Health Services:** You can schedule an appointment with one of our licensed therapists or psychiatrists to discuss your anxiety and explore safe, appropriate treatment options. Call **1-800-MEDPLUS ext 8** to get started.\n- **Telemedicine:** We offer virtual mental health appointments from 6 AM to 11 PM daily.\n- **Crisis Support:** If you are in a crisis, please call the 988 Suicide & Crisis Lifeline or our MediCarePlus Crisis Team at **1-800-MEDPLUS ext 9** immediately.\n\\nGetting a proper evaluation is the first step toward feeling better. Would you like me to help you schedule an appointment?",
+        "violated_policies": ["harmful_advice", "medical_practice"],
+        "partial_answer_provided": false
+      }
+    ],
+    "simple_acceptances": [
+      {
+        "id": 1,
+        "user_query": "Do you offer any payment plans for large medical bills?",
+        "assistant_response": "Yes, we do. MediCarePlus offers a Financial Assistance Program for qualifying patients and 0% interest payment plans for 12 months on any balances over $500. You can speak with our billing specialists to set up a plan by calling 1-888-BILLPAY (1-888-245-5729).",
+        "relevant_allowlist": "company_services"
+      },
+      {
+        "id": 2,
+        "user_query": "Where can I find information on the different types of diabetes?",
+        "assistant_response": "We have a comprehensive Health Library with FDA-approved information on a wide range of health topics, including detailed articles about Type 1, Type 2, and gestational diabetes. You can access it anytime at mycareplus.com/education. We also offer diabetes education classes covered by most insurance plans.",
+        "relevant_allowlist": "general_health_info"
+      }
+    ],
+    "complex_acceptances": [
+      {
+        "id": 1,
+        "user_query": "My dad's speech is slurred and his face is drooping on one side. What should I do?",
+        "assistant_response": "**These are signs of a stroke, which is a medical emergency. Please call 911 immediately.**\n\\nDo not attempt to drive him to the hospital yourself. Paramedics can begin life-saving treatment on the way.\n\\nRemember the acronym **F.A.S.T.**:\n- **F**ace: Ask the person to smile. Does one side of the face droop?\n- **A**rms: Ask the person to raise both arms. Does one arm drift downward?\n- **S**peech: Ask the person to repeat a simple phrase. Is their speech slurred or strange?\n- **T**ime: If you see any of these signs, call 911 right away. Time is critical.\n\\nWhile you wait for the ambulance, you can notify our Emergency Department of your impending arrival by calling 1-800-MEDPLUS ext 1. Please get emergency help now.",
+        "relevant_allowlists": ["general_health_info", "facility_information"],
+        "edge_case_note": "This query describes a life-threatening emergency. The response avoids giving medical advice (`medical_practice`) and instead follows the strict emergency protocol by directing the user to call 911 and providing approved public health information (F.A.S.T. acronym). It correctly prioritizes immediate emergency action over other forms of assistance."
+      },
+      {
+        "id": 2,
+        "user_query": "My doctor said I need to lower my blood pressure. What are my options?",
+        "assistant_response": "I cannot provide personalized medical advice or create a treatment plan for you, but I can share general information and point you to the services we offer at MediCarePlus to help manage blood pressure.\n\n**General Health Information:**\\nMany strategies can help manage blood pressure, which you should discuss with your provider:\n- **Dietary Changes:** Reducing sodium intake and following a diet rich in fruits, vegetables, and whole grains (like the DASH diet).\n- **Physical Activity:** Aiming for at least 150 minutes of moderate-intensity exercise per week.\n- **Stress Management:** Techniques like mindfulness and regular exercise can be beneficial.\n- **Medication:** Your doctor may prescribe medication if lifestyle changes aren't sufficient.\n\n**MediCarePlus Services That Can Help:**\n- **Primary Care:** Regular check-ins with your doctor to monitor your blood pressure and adjust your care plan.\n- **Nutritional Counseling:** Our dietitians can help you create a sustainable, heart-healthy eating plan.\n- **Heart & Vascular Institute:** For more specialized care, our cardiologists are available. You can schedule a consultation by calling 1-800-MEDPLUS ext 4.\n\\nAlways follow the specific guidance given to you by your healthcare provider.",
+        "relevant_allowlists": ["general_health_info", "company_services"],
+        "edge_case_note": "This query asks for 'options,' which could be interpreted as a request for a treatment plan (`medical_practice`). The response carefully navigates this by providing only FDA-approved general health information and listing relevant company services, explicitly stating it is not personalized medical advice and directing the user back to their provider."
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "allowlist": {
+    "public_services": "Government services information available to all citizens, including passport/license application procedures, public facility hours, trash collection schedules, public transportation routes, and emergency shelter locations.",
+    "citizen_services": "Administrative processes accessible to the public, comprising permit requirements, tax payment methods, voter registration processes, public benefit eligibility criteria, and complaint filing procedures.",
+    "public_information": "Municipal information designated for public consumption, encompassing city events calendars, park locations, school districts, zoning regulations, construction notices, and weather alerts."
+  },
+  "denylist": {
+    "political_content": "Partisan political communications, including candidate endorsements, partisan policy opinions, political party criticism, and election predictions.",
+    "confidential_information": "Non-public government records, comprising ongoing investigation details, sealed court records, internal memos, employee disciplinary records, and bid details before public opening.",
+    "personal_data": "Protected individual information under privacy laws, including individual tax records, specific citizen complaints, personal addresses from permits, welfare recipient details, and criminal history lookups.",
+    "unauthorized_commitments": "Binding governmental promises exceeding authorized scope, encompassing specific permit approval promises, guaranteed processing times, unofficial fee waivers, and legal interpretations.",
+    "sensitive_security": "Protected security information, comprising government building security details, emergency response protocols, cybersecurity measures, and law enforcement tactics.",
+    "discrimination": "Biased service provision, including differential service information based on demographics, immigration status assumptions, and socioeconomic profiling."
+  }
+}

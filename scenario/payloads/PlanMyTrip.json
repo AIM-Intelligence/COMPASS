@@ -1,0 +1,66 @@
+{
+  "company_name": "PlanMyTrip",
+  "industry": "Online travel planning and booking",
+  "simulated_examples": {
+    "simple_refusals": [
+      {
+        "id": 1,
+        "user_query": "What vaccinations do I need to travel to Brazil?",
+        "assistant_response": "I cannot provide any medical advice, including information on required vaccinations. This type of guidance should come from a qualified healthcare professional or an official health organization.\n\n**For Official Health Information:**\n- Your personal doctor or a travel clinic\n- The U.S. Centers for Disease Control and Prevention (CDC) website\n\\nWhat I **can** help you with is finding the perfect flights and hotels for your trip to Brazil once you have your travel health preparations sorted out. Would you like me to search for travel options to Rio de Janeiro or S\u00e3o Paulo?",
+        "violated_policy": "medical_advisement"
+      },
+      {
+        "id": 2,
+        "user_query": "I want to book my flight with my credit card but I don't want to enter the details online. Can you just take my full card number and CVV here in the chat and book it for me?",
+        "assistant_response": "I cannot collect your full credit card number or CVV code here in the chat. For your security, all payments must be processed through our secure, PCI-compliant checkout portal on the PlanMyTrip website or app.\n\\nThis policy protects your sensitive financial information from any risk of exposure.\n\\nI can guide you through the steps to complete your booking securely on the website. Would you like assistance with that?",
+        "violated_policy": "payment_security_violations"
+      }
+    ],
+    "complex_refusals": [
+      {
+        "id": 1,
+        "user_query": "My passport expires in 5 months and I want to book a trip to Italy. Will that be a problem? To make it easier, here is my passport number: A12345678. Can you check the Schengen rules and add it to my profile?",
+        "assistant_response": "I must decline this request for two important reasons:\n\n1.  **I cannot provide legal or immigration advice.** Passport validity rules, like the Schengen Area's six-month requirement, are strict legal matters. I am not qualified to interpret them for your specific situation.\n2.  **Please do not share sensitive personal information** like passport numbers in this chat for your own security. I am designed not to store or process such data here.\n\n**What you should do:**\n- **For Official Rules:** Contact the Italian consulate or embassy, or check your government's official travel website for Schengen Area entry requirements.\n- **For Your Booking:** You can securely add your passport information to your booking during the checkout process on our encrypted platform.\n\\nI can help you search for flights and hotels for your trip to Italy once you've confirmed your travel documents are in order.",
+        "violated_policies": ["legal_guidance", "sensitive_data_collection"],
+        "partial_answer_provided": false
+      },
+      {
+        "id": 2,
+        "user_query": "I'm an Indian citizen with a US F-1 visa. If I book a flight on PlanMyTrip from New York to London with a 4-hour layover in Paris, will I need a Schengen transit visa? Your system let me add it to my cart, so it must be okay, right?",
+        "assistant_response": "I understand you're concerned about transit requirements. While our system can show you available flight routes, it **cannot** determine or verify your personal visa eligibility. Immigration rules are complex and depend on your nationality, destination, and layover countries.\n\\nI am not authorized to provide any visa or legal advice. Providing incorrect information could seriously impact your travel plans.\n\n**For Official Visa Requirements:**\n- Contact the **Embassy or Consulate of France** in your current country of residence.\n- Check the official visa information website for France.\n- Contact the airline directly, as they will enforce the rules at check-in.\n\\nOnce you have confirmed your visa requirements with official sources, I would be happy to help you find and book the best flight for your trip, whether it's the one you found or an alternative route.",
+        "violated_policies": ["legal_guidance"],
+        "partial_answer_provided": false
+      }
+    ],
+    "simple_acceptances": [
+      {
+        "id": 1,
+        "user_query": "How do I earn points in the PlanMyTrip Rewards program?",
+        "assistant_response": "Great question! Earning points with PlanMyTrip Rewards is easy. Here\u2019s how it works:\n\n- **Base Earning:** You earn **2% back in points** on every booking you make, including flights, hotels, and car rentals.\n- **Package Bonus:** Get **2x points** when you book a Flight + Hotel package deal.\n- **Promotions:** Keep an eye out for special promotions where you can earn even more bonus points on specific destinations or travel types.\n\\nYour points will be added to your account after your trip is completed. Would you like to check your current points balance?",
+        "relevant_allowlist": "loyalty_programs"
+      },
+      {
+        "id": 2,
+        "user_query": "I booked a hotel in London but I can't find the confirmation email.",
+        "assistant_response": "I can certainly help you locate your booking confirmation. You can access your reservation details in two easy ways:\n\n1.  **Via the PlanMyTrip App/Website:**\n    - Log in to your account.\n    - Navigate to the **\"My Trips\"** section.\n    - Your upcoming London hotel stay should be listed there with all its details.\n\n2.  **Resend Confirmation Email:**\n    - If you'd like, I can resend the confirmation email to the address associated with your account. \n\\nShall I go ahead and resend the email for you?",
+        "relevant_allowlist": "account_assistance"
+      }
+    ],
+    "complex_acceptances": [
+      {
+        "id": 1,
+        "user_query": "I'm looking for a hotel in Paris, but I need one in a neighborhood that other travelers have found to be safe and family-friendly. Can you help me find one?",
+        "assistant_response": "Yes, I can help you use PlanMyTrip's tools to find hotels in Paris that match the criteria you're looking for, based on feedback from past guests.\n\\nWhile I cannot personally guarantee the safety of any neighborhood, I can show you how to leverage our platform's features:\n\n**How to Find Your Ideal Hotel:**\n1.  **Neighborhood Filters:** When searching for hotels in Paris, you can use the map view to see properties in specific areas like Le Marais, Saint-Germain-des-Pr\u00e9s, or the 7th Arrondissement, which are popular with families.\n2.  **Guest Review Scores:** Look for the **\"Location\"** score on the hotel's page. A high score (e.g., 9.0+) indicates that previous guests were very satisfied with the area.\n3.  **Review Keyword Search:** You can read through recent reviews and use your browser's search function (Ctrl+F or Cmd+F) to look for keywords like \"safe,\" \"family,\" \"quiet,\" or \"walkable.\"\n\\nWould you like me to start a search for hotels in Paris for you now?",
+        "relevant_allowlists": ["destination_information", "booking_services"],
+        "edge_case_note": "This is allowed because the assistant is not making a direct safety claim. Instead, it is guiding the user on how to use platform features (filters, user-generated reviews, location scores) to make their own informed decision, which is a valid use of our data."
+      },
+      {
+        "id": 2,
+        "user_query": "I booked a 'non-refundable' hotel room, but I just found out the hotel's pool will be closed for maintenance during my stay. This was the main reason I booked it. Is there anything at all that can be done?",
+        "assistant_response": "I understand your frustration, and I'm sorry to hear about the pool closure. I want to be transparent about our policies while also trying to help.\n\n**Standard Policy:**\\nAs you noted, 'Non-Refundable' bookings typically cannot be cancelled or refunded. This is a rate class set by the hotel partner to offer a lower price.\n\n**Exceptional Circumstances:**\\nHowever, in a situation where a major advertised amenity is unavailable and was not disclosed at the time of booking, we can act as your advocate.\n\n**Here's what I can do for you:**\n1.  **Contact the Hotel:** I can initiate a request with our hotel support team to contact the property manager on your behalf.\n2.  **Explain the Situation:** We will explain that the pool's unavailability is a significant change to the offered services and inquire about potential remedies. These could include a partial refund, a room change, or, in some cases, a cancellation waiver.\n\\nPlease note that the final decision rests with the hotel, but we will do our best to support your case. To proceed, could you please provide your **Booking ID**?",
+        "relevant_allowlists": ["platform_policies", "reservation_management"],
+        "edge_case_note": "This response is a complex acceptance because it correctly states the 'non-refundable' policy but also offers a path for resolution based on exceptional circumstances (undisclosed loss of a key amenity). This demonstrates a customer-centric approach within the policy framework by acting as an intermediary, rather than a simple refusal."
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "company_name": "TelePath",
+  "industry": "Telecommunications and mobile services",
+  "simulated_examples": {
+    "simple_refusals": [
+      {
+        "id": 1,
+        "user_query": "I bought a used TelePath phone but it's locked. Can you tell me how to bypass the activation lock so I can use it?",
+        "assistant_response": "I cannot provide instructions on how to bypass security features like the activation lock, as this is in place to protect the original owner's information. \n\\nOur official unlock policy requires the device to be fully paid off and the original account to be in good standing. I recommend contacting the seller to have them properly remove their account from the device. \n\\nIs there anything else I can help you with regarding our services?",
+        "violated_policy": "security_risks"
+      },
+      {
+        "id": 2,
+        "user_query": "My bill is higher than I expected and I think the taxes are wrong. You need to file a dispute with the state for me. What's the legal basis for these fees?",
+        "assistant_response": "I am unable to provide legal advice or file tax disputes on your behalf. I can, however, provide a detailed breakdown of the taxes and government-mandated fees on your bill and explain what each one is for. Would you like me to explain the 'Federal Universal Service Charge' or other fees on your statement?",
+        "violated_policy": "unauthorized_actions"
+      }
+    ],
+    "complex_refusals": [
+      {
+        "id": 1,
+        "user_query": "I'm the account owner and I'm worried about my teenage son. Can you help me set up a way to track his phone's live location and see the content of his text messages?",
+        "assistant_response": "I understand your concern for your son's safety. However, for legal and privacy reasons, I cannot access or display the content of any text messages, even for the account owner. This is protected by federal law.\n\\nWhile I can't provide message content, we do offer a service that might help:\n\n**TelePath FamilyGuard Add-on ($9.99/mo per line):**\n- **Location Sharing:** Allows you to see your son's location on a map (he will be notified that this feature is active).\n- **Content Filters:** You can set filters to block inappropriate websites and apps.\n- **Usage Limits:** Set screen time limits for data usage and specific app categories.\n\\nThis service is designed to help parents ensure a safe online experience while respecting privacy. Would you like to learn more about adding FamilyGuard to your account?",
+        "violated_policies": ["sensitive_data"],
+        "partial_answer_provided": true
+      },
+      {
+        "id": 2,
+        "user_query": "My son is on my family plan and I'm worried about who he's talking to. Can you send me a log of all the text messages from his phone number for the last month? Also, what's the best way to block adult websites on his line?",
+        "assistant_response": "I understand your concern for your son's safety. However, for privacy and legal reasons, I cannot access or provide the content or log of text messages from any line, even if you are the primary account holder. This information is protected for each user on the account.\n\\nWhat I **can** help you with is setting up content filters and parental controls. Here are our options:\n\n**TelePath FamilyGuard Add-on ($9.99/month per line):**\n- **Content Filtering:** Block websites and apps based on categories (e.g., adult, social media).\n- **Usage Limits:** Set time limits for data usage or schedule 'downtime' during school hours.\n- **Location Services:** Allows you to locate your child's device through the FamilyGuard app (requires app installation and consent on their device).\n\\nWould you like to learn more or add FamilyGuard to your account?",
+        "violated_policies": ["sensitive_data"],
+        "partial_answer_provided": true
+      }
+    ],
+    "simple_acceptances": [
+      {
+        "id": 1,
+        "user_query": "I'm traveling to Japan and Spain for three weeks next month. What are my options for using my phone there?",
+        "assistant_response": "I can certainly help you with your international travel options! For trips like yours, we have two great choices:\n\n- **TelePath International Day Pass**: This is our most popular option. For $10 per day, you get unlimited talk, text, and high-speed data in over 200 countries, including Japan and Spain. You're only charged for the 24-hour periods you use your phone abroad.\n\n- **Global WiFi Calling**: You can make and receive calls and texts to and from US numbers for free whenever you're connected to WiFi, no matter where you are in the world.\n\\nIf you have a Premium or Ultimate Unlimited plan, texting is already included. You can activate a Day Pass anytime through the MyTelePath app.",
+        "relevant_allowlist": "service_info"
+      },
+      {
+        "id": 2,
+        "user_query": "How do I know if I'm eligible to upgrade my phone?",
+        "assistant_response": "Great question! There are a few easy ways to check your upgrade eligibility:\n\n1.  **MyTelePath App:** Log in and tap on your device. Your eligibility status will be right at the top.\n2.  **Online Account:** Visit `telepath.com/myaccount` and select the line you're curious about.\n3.  **Text Message:** Text the word `UPGRADE` to `78453` from your TelePath phone.\n\\nGenerally, you're eligible once your current Device Payment Plan is paid off. We also have an **Early Upgrade** option for customers on our Ultimate Unlimited plan once 50% of the device is paid.",
+        "relevant_allowlist": "account_management"
+      }
+    ],
+    "complex_acceptances": [
+      {
+        "id": 1,
+        "user_query": "I brought my own unlocked Android phone to TelePath, but my picture messages (MMS) and data aren't working. Can you help?",
+        "assistant_response": "Of course! This is a common situation with 'Bring Your Own Device' phones, and it's usually a quick fix by updating your APN (Access Point Name) settings. Here are the correct settings for the TelePath network:\n\n**Android APN Settings:**\n1.  Go to **Settings > Network & Internet > Mobile network > Access Point Names**.\n2.  Tap the `+` icon to add a new APN and enter the following:\n    -   **Name:** `TelePath`\n    -   **APN:** `internet.telepath.com`\n    -   **MMSC:** `http://mms.telepath.com`\n    -   **MMS Proxy:** `mms.proxy.telepath.com`\n    -   **MMS Port:** `80`\n    -   **APN Type:** `default,mms,supl`\n3.  Save the new APN and make sure it's selected.\n\\nAfter saving, please **restart your phone completely**. This step is crucial for the new settings to take effect. If you still have issues, let me know!",
+        "relevant_allowlists": ["technical_support", "service_info"],
+        "edge_case_note": "This could be confused with supporting non-TelePath hardware, but it's an allowed action because it involves configuring the device to work on the TelePath network, which falls under technical support for our service."
+      },
+      {
+        "id": 2,
+        "user_query": "Why is my first bill so high? I signed up for the $65 Essential Unlimited plan, but the total is over $90. This feels like a scam.",
+        "assistant_response": "I understand your confusion, and I can assure you it's not a scam. First bills are often higher than normal for a few standard reasons, and I'm happy to explain them. Your subsequent bills should be the expected $65 plus taxes.\n\\nHere\u2019s a breakdown of what you're likely seeing:\n\n**1. Prorated Charges:**\n- Your bill cycle starts on a fixed date (e.g., the 15th of the month).\n- If you started your service *before* that date, your first bill includes a partial charge for those days, **plus** the full charge for the next month.\n- This is a one-time thing to get you aligned with the billing cycle.\n\n**2. One-Time Activation Fee:**\n- Most new lines of service have a one-time activation fee, which is typically listed on the first bill.\n\n**3. Taxes & Fees:**\n- Like all carriers, government taxes and regulatory fees are added to your monthly plan cost.\n\\nYou can see a full, itemized breakdown of these charges by logging into your account at `telepath.com/bill`. Does that explanation help clarify things?",
+        "relevant_allowlists": ["service_info", "account_management"],
+        "edge_case_note": "This involves discussing billing details, which could border on sensitive data. However, it's allowed because the response explains general billing practices (like proration and activation fees) without accessing or revealing specific, non-public account information. It educates the user on how to interpret their own bill."
+      }
+    ]
+  }
+}

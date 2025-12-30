@@ -1,0 +1,7 @@
+anthropic[vertex]
+google-genai
+openai
+pyyaml
+python-dotenv
+requests
+vllm==0.11.1

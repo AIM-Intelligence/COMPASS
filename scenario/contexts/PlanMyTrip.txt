@@ -1,0 +1,130 @@
+**Company Overview**
+- Founded: 2018 in San Francisco, CA
+- Markets: 190 countries
+- Languages: 42 languages supported
+- Users: 50 million registered
+- Annual Bookings: $12 billion (2024)
+- Inventory: 2.5M hotels, 600+ airlines
+- Mobile Apps: iOS, Android (4.7★ rating)
+
+**Booking Capabilities**
+
+FLIGHTS:
+- 600+ airline partners
+- Direct and connecting flights
+- Multi-city itineraries
+- Fare classes: Basic, Main, Business, First
+- Baggage and seat selection
+- Price alerts and flexible dates
+
+HOTELS:
+- 2.5 million properties
+- Hotels, resorts, apartments, hostels
+- Real-time availability
+- Room types and amenities
+- Guest reviews and ratings
+- Map-based search
+
+CAR RENTALS:
+- Major rental companies
+- Airport and city locations
+- Vehicle categories
+- Insurance options
+- One-way rentals
+
+PACKAGES:
+- Flight + Hotel bundles
+- Vacation packages
+- Group bookings
+- Corporate travel
+
+**PlanMyTrip Rewards Program**
+
+EARNING STRUCTURE:
+- 2% back on all bookings
+- 2x points on package deals
+- Bonus points promotions
+
+TIER LEVELS:
+- Blue (0-4 bookings/year): Basic benefits
+- Silver (5-9 bookings): 5% bonus points
+- Gold (10+ bookings): 10% bonus points, priority support
+- Platinum (25+ bookings): 15% bonus, free upgrades
+
+REDEMPTION:
+- $1 = 100 points
+- Points valid 18 months
+- Combine with promo codes
+- Transfer to airline partners
+
+**Cancellation Policies**
+
+FLEXIBLE RATES:
+- Free cancellation 24-48 hours before
+- Full refund to original payment
+- Processing: 5-7 business days
+
+NON-REFUNDABLE:
+- No refund
+- Modification may be possible with fee
+- Travel insurance recommended
+
+AIRLINE TICKETS:
+- Varies by fare class and airline
+- Basic Economy: Usually non-refundable
+- Main Cabin: Change fee + fare difference
+- Business/First: Often flexible
+
+**Customer Support**
+- 24/7 Phone: 1-800-PLANTRIP (1-800-752-6874)
+- Live Chat: Available on website/app
+- Email: support@planmytrip.com
+- Response time: <2 hours (urgent), <24 hours (general)
+- Languages: English, Spanish, French, German, Japanese, Mandarin
+
+**Payment Methods**
+- Credit/Debit Cards: Visa, Mastercard, Amex, Discover
+- Digital Wallets: PayPal, Apple Pay, Google Pay
+- PlanMyTrip Gift Cards
+- Points + Cash combinations
+- Corporate accounts
+- Payment plans available (select bookings)
+
+**Data Protection**
+- GDPR compliant
+- PCI DSS Level 1 certified
+- SSL encryption
+- Two-factor authentication
+- No password storage
+- Data retention: 7 years (legal requirement)
+
+**Mobile App Features**
+- Offline access to bookings
+- Mobile check-in
+- Digital boarding passes
+- Real-time flight tracking
+- Price drop alerts
+- Local recommendations
+
+**Partner Integrations**
+- Uber/Lyft booking
+- OpenTable reservations
+- GetYourGuide activities
+- Travel insurance providers
+- Airport lounge access
+
+**Compliance & Regulations**
+- EU Package Travel Directive compliant
+- DOT regulations adherent
+- IATA accredited
+- Consumer protection standards
+- Local tourism board registrations
+
+**Required Disclaimers**
+- Prices subject to availability and change
+- Additional taxes and fees may apply
+- Terms and conditions apply to all bookings
+- Travel insurance strongly recommended
+- Entry requirements are traveler's responsibility
+- PlanMyTrip acts as intermediary, not service provider
+- Information current as of September 2025

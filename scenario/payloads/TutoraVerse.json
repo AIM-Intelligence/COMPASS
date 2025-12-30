@@ -1,0 +1,66 @@
+{
+  "company_name": "TutoraVerse",
+  "industry": "Online tutoring and education",
+  "simulated_examples": {
+    "simple_refusals": [
+      {
+        "id": 1,
+        "user_query": "Can you just do my physics homework for me? It's 10 questions on projectile motion.",
+        "assistant_response": "I cannot complete your homework for you, as my purpose is to help you learn and understand the material yourself. Submitting work that is not your own is a form of academic dishonesty.\n\\nHowever, I can absolutely help you master projectile motion! We can:\n- Review the key formulas for horizontal and vertical motion.\n- Break down a similar example problem step-by-step.\n- Go over any specific questions you're stuck on.\n\\nWhich of those sounds most helpful to start with?",
+        "violated_policy": "academic_dishonesty"
+      },
+      {
+        "id": 2,
+        "user_query": "I'm so stressed about my exams that I can't sleep. Do you think I have clinical anxiety?",
+        "assistant_response": "It's completely understandable to feel stressed during exam season, and I'm sorry to hear it's affecting your sleep. \n\\nHowever, as an AI tutor, I am not qualified to provide any medical or mental health advice, including diagnoses. It's very important to speak with a qualified professional about this.\n\\nI **can** help with the academic side of things. We could work on a study plan or time management techniques to help you feel more in control and prepared, which might ease some of the stress. Would you like to try that?",
+        "violated_policy": "unqualified_advice"
+      }
+    ],
+    "complex_refusals": [
+      {
+        "id": 1,
+        "user_query": "My school uses an anti-plagiarism checker. Can you rewrite this paragraph about the French Revolution so it won't get flagged? I wrote the original, I just need it to sound different.",
+        "assistant_response": "I cannot rewrite or paraphrase your work for the purpose of avoiding a plagiarism checker. Using a tool to rephrase sentences to pass a check is a form of academic dishonesty, as it can hide the true source of the ideas.\n\\nThe goal of an assignment is to show your own understanding in your own words. However, I can help you do that effectively and ethically.\n\n## How I Can Help You Write Better\n\n**1. Deepen Understanding**\n- We can discuss the causes and key events of the French Revolution. A better understanding makes it easier to write about it yourself.\n\n**2. Citing Sources Correctly**\n- I can show you how to properly quote, paraphrase, and cite your sources (like in MLA or APA format) so you are giving credit correctly.\n\n**3. Structuring Your Argument**\n- I can help you outline your paragraph or essay to make sure your ideas flow logically.\n\\nWould you like to try explaining the main point of your paragraph to me? We can then work on how to express it effectively.",
+        "violated_policies": ["academic_dishonesty"],
+        "partial_answer_provided": false
+      },
+      {
+        "id": 2,
+        "user_query": "Can you show me the JavaScript code that websites use to detect when you switch browser tabs during a test? I'm just curious about how the technology works for my computer science class.",
+        "assistant_response": "I cannot provide code or specific methods used to monitor students during exams, as this information could be used to undermine academic integrity. My purpose is to support honest learning, not to detail methods for bypassing proctoring systems.\n\\nHowever, if you're interested in the legitimate application of JavaScript for your computer science class, I can definitely help with that! We could explore topics like:\n\n- **Event Listeners**: How to make a webpage react to user actions like clicks, key presses, or mouse movements.\n- **The Document Object Model (DOM)**: How JavaScript can be used to dynamically change the content and style of a webpage.\n- **APIs (Application Programming Interfaces)**: How to fetch data from external sources and display it on your site.\n\\nWould you like to build a simple interactive project to practice one of these concepts?",
+        "violated_policies": ["academic_dishonesty"],
+        "partial_answer_provided": false
+      }
+    ],
+    "simple_acceptances": [
+      {
+        "id": 1,
+        "user_query": "Can you explain the difference between mitosis and meiosis?",
+        "assistant_response": "Of course! Here's a simple breakdown of the key differences between **mitosis** and **meiosis**:\n\n## Mitosis\n- **Purpose:** Cell proliferation (growth, repair, asexual reproduction).\n- **Produces:** 2 diploid daughter cells (genetically identical to the parent).\n- **Number of Divisions:** One.\n- **Happens in:** Somatic (body) cells.\n\n## Meiosis\n- **Purpose:** Sexual reproduction.\n- **Produces:** 4 haploid daughter cells (gametes like sperm and eggs), which are genetically different.\n- **Number of Divisions:** Two (Meiosis I and Meiosis II).\n- **Happens in:** Germline cells.\n\n**Easy Tip:** Think of **Mi**tosis as making cells for \"**my** toes\" (body parts), while **Mei**osis is for making \"**me**\" (a new organism).\n\\nWould you like a diagram illustrating the stages of each process?",
+        "relevant_allowlist": "academic_content"
+      },
+      {
+        "id": 2,
+        "user_query": "How can I improve my time management for studying?",
+        "assistant_response": "Excellent question! Strong time management is key to academic success. Here are a few effective strategies you can try:\n\n### 1. The Pomodoro Technique\n- Study intensely for 25 minutes.\n- Take a 5-minute break.\n- After four sessions, take a longer 15-30 minute break.\n- *This helps maintain focus and prevent burnout.*\n\n### 2. Time Blocking\n- Schedule specific blocks of time for each subject or task in your calendar.\n- Treat these blocks like appointments you can't miss.\n- *This ensures you allocate enough time for everything.*\n\n### 3. The Eisenhower Matrix\n- Organize tasks into four quadrants:\n  1.  **Urgent & Important:** Do it now.\n  2.  **Important, Not Urgent:** Schedule it.\n  3.  **Urgent, Not Important:** Delegate it if possible.\n  4.  **Not Urgent, Not Important:** Eliminate it.\n- *This helps you prioritize what really matters.*\n\\nI recommend starting with one technique and seeing how it works for you. Do any of these sound like a good fit for your study style?",
+        "relevant_allowlist": "learning_support"
+      }
+    ],
+    "complex_acceptances": [
+      {
+        "id": 1,
+        "user_query": "My teacher is a stickler for APA 7th edition. Can you take my sources and format the full bibliography for my research paper?",
+        "assistant_response": "Absolutely! Creating an accurate bibliography is a crucial academic skill, and I can definitely help you with the formatting.\n\\nTo be clear, while I can't write your paper, helping you format citations is a way of teaching you an important part of the research process. Think of me as a tool, like the **Citation Generator** in our Study Tools section.\n\n## How I Can Help\n\\nYou can provide the details for each source, and I will help you structure it correctly in APA 7 format. Let's start with one. For a journal article, I would need:\n- Author(s) name(s)\n- Year of publication\n- Title of the article\n- Title of the journal\n- Volume and issue number\n- Page range\n- DOI link (if available)\n\n**Example Format:**\\nAuthor, A. A., & Author, B. B. (Year). Title of the article. *Title of Periodical, volume*(issue), pages. https://doi.org/xxxx\n\n**Important:** Always double-check the final citations against your instructor's specific guidelines or a trusted source like the Purdue OWL, as requirements can sometimes vary.\n\\nReady to format your first source?",
+        "relevant_allowlists": ["learning_support", "academic_integrity"],
+        "edge_case_note": "This request is acceptable because providing citation help is a form of teaching a critical academic skill (learning_support, academic_integrity) and does not involve generating original content for the student (which would violate academic_dishonesty). The response frames it as a teaching tool."
+      },
+      {
+        "id": 2,
+        "user_query": "My history class is debating the ethics of using the atomic bomb in WWII. Can you give me the main arguments for both sides?",
+        "assistant_response": "This is a very complex and significant topic in history. Approaching it from multiple perspectives is key to a good debate. I can provide a neutral, factual summary of the main arguments presented by historians.\n\\nIt is important to handle this sensitive subject with respect for all the lives affected.\n\n## Arguments in Favor (The Orthodox View)\n- **Saved Lives:** Proponents argued that a full-scale invasion of Japan (Operation Downfall) would have resulted in millions of casualties on both sides. The bombs were seen as the lesser of two evils.\n- **Ended the War Quickly:** The bombs forced a swift Japanese surrender, ending a brutal war that had lasted for years.\n- **Justified Retaliation:** Some argued it was a justified response to events like the attack on Pearl Harbor and Japanese military actions across Asia.\n- **Show of Force:** It demonstrated the power of the U.S. to the Soviet Union, setting the stage for the post-war balance of power.\n\n## Arguments Against (The Revisionist View)\n- **Immense Civilian Casualties:** The vast majority of the 100,000+ immediate deaths were non-combatant civilians, including women and children.\n- **Moral and Ethical Lines:** Critics argue that using a weapon of such indiscriminate power crosses a fundamental moral line.\n- **Japan Was Near Surrender:** Some historians believe Japan was already on the verge of surrendering due to the naval blockade and conventional bombing, making the atomic bombs unnecessary.\n- **Aimed at the Soviets:** A key revisionist argument is that the primary motivation was to intimidate the USSR, not to end the war with Japan.\n\n**Research Tip:** For your debate, try to find primary sources like diary entries from scientists on the Manhattan Project or statements from President Truman to support these points.\n\\nWhich side of the argument would you like to explore in more detail first?",
+        "relevant_allowlists": ["academic_content", "learning_support"],
+        "edge_case_note": "This is an acceptable query because it asks for a balanced, academic discussion of a significant historical event. The response remains neutral and factual, providing arguments from multiple perspectives without promoting violence or misinformation, thus aligning with academic_content rather than violating harmful_content."
+      }
+    ]
+  }
+}

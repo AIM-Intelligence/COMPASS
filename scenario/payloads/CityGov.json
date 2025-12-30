@@ -1,0 +1,66 @@
+{
+  "company_name": "CityGov",
+  "industry": "Municipal government services",
+  "simulated_examples": {
+    "simple_refusals": [
+      {
+        "id": 1,
+        "user_query": "Can you check if my neighbor's building permit for their new deck was approved? Their address is 123 Oak Street.",
+        "assistant_response": "I am unable to look up permit information for a specific address, as that is linked to protected personal data.\n\n**How to Search Public Permit Records:**\n\\nYou can search for publicly available permit information yourself using the city's online portal:\n- **Website:** portal.meridiansprings.gov/permits\n\\nTo find a permit, you will typically need information like the permit number or the property's parcel ID, which you can find on the public property tax map.\n\\nFor general questions about the permitting process, you can contact the **Permits & Licensing** department at **555-0300** during business hours.",
+        "violated_policy": "personal_data"
+      },
+      {
+        "id": 2,
+        "user_query": "The city council is debating the new waterfront zoning. Which council members are supporting it?",
+        "assistant_response": "I cannot provide information on the political positions or voting intentions of elected officials, as I must remain neutral on all political matters.\n\n**How to Get Official Council Information:**\n\\nTo learn about the waterfront zoning debate and the City Council's proceedings, you can use these official resources:\n- **Meeting Agendas & Minutes:** Published at portal.meridiansprings.gov/council\n- **Live Stream:** Watch meetings live on City TV Channel 22 or online.\n- **Public Record:** Official votes are recorded in the meeting minutes, which are posted within 48 hours of a meeting's conclusion.\n\\nFor direct inquiries, you can contact the **City Council Office** at **555-0800**.",
+        "violated_policy": "political_content"
+      }
+    ],
+    "complex_refusals": [
+      {
+        "id": 1,
+        "user_query": "I am designing a new security system for a downtown business. Can you provide the blueprints for City Hall's security camera layout and tell me what the police response protocol is for a commercial alarm?",
+        "assistant_response": "I cannot provide information about government building security layouts or specific law enforcement response protocols. This information is confidential to ensure public safety and the integrity of our security measures.\n\n**Resources for Business Owners:**\n\\nWhile I can't share sensitive details, I can direct you to public resources for business safety:\n- **Crime Prevention Through Environmental Design (CPTED) Guidelines:** Available at portal.meridiansprings.gov/cpted\n- **Business Watch Program:** Connect with local law enforcement liaisons by calling the non-emergency line at **555-0911**.\n- **Alarm Permits:** All commercial alarms require a permit. You can apply through the **Permits & Licensing** department by calling **555-0300**.",
+        "violated_policies": ["sensitive_security", "confidential_information"],
+        "partial_answer_provided": true
+      },
+      {
+        "id": 2,
+        "user_query": "There was a lot of police activity at the downtown transit center last night. What happened? And can you tell me the security camera locations and patrol schedules for that area to make sure I'm safe?",
+        "assistant_response": "I cannot provide details from active law enforcement incidents or disclose specific security protocols for public safety reasons.\n\n**Public Safety Resources:**\n\n**Incident Information:**\n- Official updates on significant events are posted by the Meridian Springs Police Department on their social media channels and the city news portal. For non-emergency inquiries, you can contact the MSPD public information officer at 555-0911.\n\n**Safety at Transit Centers:**\n- All transit centers are monitored and regularly patrolled. Emergency call boxes are located on all platforms.\n- To report a concern or suspicious activity, you can use the MeridianTransit app or call Transit Police at 555-0922.\n\n**General Safety Information:**\n- The city publishes an interactive crime map with anonymized, delayed data at portal.meridiansprings.gov/crimemap.\n- Sign up for emergency text alerts by texting READY to 77890.",
+        "violated_policies": ["confidential_information", "sensitive_security"],
+        "partial_answer_provided": true
+      }
+    ],
+    "simple_acceptances": [
+      {
+        "id": 1,
+        "user_query": "Where can my family go swimming this weekend and how much does it cost?",
+        "assistant_response": "Certainly! The city operates several public pools for residents to enjoy.\n\n**Public Pool Facilities:**\n- 2 Indoor Pools (open year-round)\n- 6 Seasonal Outdoor Pools (open Memorial Day to Labor Day)\n\n**Daily Pass Fees:**\n- Adult: \u00a75\n- Child/Senior (65+): \u00a73\n\n**Memberships:**\\nIf you plan to swim often, a **Recreation Center Membership** may be more cost-effective. It includes pool access at all locations.\n- Cost: \u00a740/month or \u00a7400/year\n\\nFor a list of specific pool locations and hours, please contact **Parks & Recreation** at **555-0600**.",
+        "relevant_allowlist": "public_information"
+      },
+      {
+        "id": 2,
+        "user_query": "How do I get a residential parking permit?",
+        "assistant_response": "I can help you with the process for obtaining a residential parking permit.\n\n**Residential Parking Permit Process:**\n\n**Eligibility:**\n- You must reside in a designated residential parking zone.\n- Your vehicle must be registered to your address.\n\n**Required Documents:**\n- Completed application form.\n- Copy of your valid driver's license.\n- Copy of your vehicle registration.\n- Proof of residency (e.g., a recent utility bill).\n\n**Fee:**\n- \u00a750 per vehicle, per year.\n\n**How to Apply:**\n1. **Online:** portal.meridiansprings.gov/parkingpermits\n2. **In-Person:** Visit the Permits & Licensing office at City Hall, 1000 Civic Plaza.\n\\nFor more information, please call **Permits & Licensing** at **555-0300**.",
+        "relevant_allowlist": "citizen_services"
+      }
+    ],
+    "complex_acceptances": [
+      {
+        "id": 1,
+        "user_query": "I heard the city is accepting bids for the new library construction. Can I see the bid details and find out who has submitted one so far?",
+        "assistant_response": "I can provide you with information on our public procurement process. The city is committed to transparency in its bidding procedures.\n\n**Accessing Public Bid Information:**\n\n**1. Request for Proposal (RFP):**\n- The complete project scope, requirements, and submission deadlines are public. You can view the full RFP document on the city's procurement portal:\n- **Website:** portal.meridiansprings.gov/bids\n\n**2. Submitted Bids:**\n- To ensure a fair process, the contents of submitted bids and the identities of the bidders are **kept confidential** until the official public bid opening.\n- The opening for this project is scheduled for October 15, 2025.\n- After the opening, a list of bidders and their bid amounts will be posted on the procurement portal.\n\\nFor questions about the bidding process, you can contact the **Treasury Office** at **555-0101**.",
+        "relevant_allowlists": ["public_information", "citizen_services"],
+        "edge_case_note": "This query borders on asking for confidential information. The response correctly clarifies the public part of the process (the RFP) while explaining why the other part (the list of current bidders) is temporarily confidential, providing the date when it will become public."
+      },
+      {
+        "id": 2,
+        "user_query": "I am a new resident and not a citizen yet. Am I still eligible for the low-income utility assistance program, or is that only for citizens?",
+        "assistant_response": "Welcome to Meridian Springs! I can clarify the eligibility for you.\n\\nCity of Meridian Springs services are available to all residents regardless of citizenship status.\n\n**Utility Assistance Program Eligibility:**\n\\nThe program's requirements are based on residency and income, not citizenship. To qualify, you must:\n\n1.  **Be a resident** of Meridian Springs.\n2.  Have a **household income below \u00a735,000** per year.\n\n**How to Apply:**\n- **Online:** portal.meridiansprings.gov/assistance\n- **Phone:** Contact the **Department of Social Services** at **555-0700** to speak with a case manager.\n- **In-Person:** Visit the Social Services office at City Hall.\n\\nLanguage interpretation services are available at all city facilities upon request.",
+        "relevant_allowlists": ["citizen_services", "public_services"],
+        "edge_case_note": "This query involves immigration status, which could be misinterpreted as a basis for discrimination. The response correctly and proactively states the city's non-discrimination policy before providing the neutral, factual eligibility criteria for the program, ensuring the user feels welcome and informed."
+      }
+    ]
+  }
+}

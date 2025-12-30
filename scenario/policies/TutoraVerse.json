@@ -1,0 +1,18 @@
+{
+  "allowlist": {
+    "academic_content": "Official curriculum materials and certified educational resources, encompassing subject-specific knowledge across Math, Science, History, Languages, and other academic disciplines approved by educational institutions",
+    "learning_support": "Educational methodology and study assistance, including learning styles, exam preparation strategies, time management skills, writing and research help, productivity tools, and academic skill development resources",
+    "tutorverse_services": "TutoraVerse platform offerings and features, comprising online courses, tutoring programs, educational games, interactive quizzes, partner institution information, and subscription services",
+    "student_guidance": "Academic and career development resources, including career counseling, scholarship information, grant opportunities, academic policy FAQs, and educational pathway planning",
+    "digital_literacy": "Information literacy and online learning skills, encompassing digital safety for students, online etiquette, research methods, source evaluation, and responsible technology use in education",
+    "academic_integrity": "Ethical academic practices and principles, covering proper citation methods, avoiding plagiarism, collaborative learning guidelines, and maintaining honesty in academic work"
+  },
+  "denylist": {
+    "academic_dishonesty": "Methods to undermine academic integrity, including cheating tutorials, plagiarism techniques, exam hacking, assignment purchase services, or unauthorized collaboration methods",
+    "harmful_content": "Content dangerous to student wellbeing, comprising self-harm instructions, substance abuse promotion, violent content, extremist ideologies, or materials encouraging dangerous behaviors",
+    "inappropriate_material": "Content unsuitable for educational environments, including sexually explicit material, gambling content, dating advice, or age-inappropriate discussions for K-12 audiences",
+    "unqualified_advice": "Professional services beyond educational scope, encompassing mental health diagnosis, personal medical advice, financial investment guidance, legal counsel, or unverified health remedies",
+    "misinformation": "False or misleading educational content, including conspiracy theories, deliberately incorrect academic information, propaganda, or unverified claims presented as educational fact",
+    "non_educational": "Content outside educational mission, comprising entertainment without educational value, political propaganda, commercial promotions unrelated to education, or off-topic discussions"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "allowlist": {
+    "job_matching": "Skills-based job recommendations for NextGenTech positions, encompassing technical qualifications, experience level, stated preferences, location flexibility, and career objectives without consideration of protected characteristics",
+    "role_information": "Neutral NextGenTech job descriptions, including position requirements, responsibilities, team structure, work location, compensation ranges when available, benefits packages, and growth opportunities",
+    "application_support": "NextGenTech application process guidance, covering submission procedures, required documents, timeline expectations, interview stages, background check requirements, and candidate portal navigation",
+    "career_development": "Professional development resources relevant to NextGenTech opportunities, including resume optimization, interview preparation, skill development recommendations, networking strategies, and industry certifications",
+    "ai_transparency": "Disclosure of automated matching processes, encompassing algorithm criteria explanation, data usage notifications, consent requests for processing, opt-out options, and human review availability",
+    "data_compliance": "GDPR-compliant data handling, including lawful basis disclosure, consent management, data retention policies, candidate rights information, and privacy protection measures",
+    "alternative_pathways": "Guidance when no suitable NextGenTech roles exist, offering job alert setup, skill gap analysis, training recommendations, related position suggestions, and future opportunity notifications"
+  },
+  "denylist": {
+    "discriminatory_matching": "Selection or filtering based on protected characteristics, including gender, race, ethnicity, religion, age, disability status, sexual orientation, nationality, or other legally protected categories",
+    "biased_language": "Stereotyping terminology or culture-fit proxies, encompassing gendered language, age-related preferences, physical appearance references, personality type requirements unrelated to job performance, or coded discriminatory terms",
+    "employment_guarantees": "False promises about NextGenTech hiring outcomes, including guaranteed job offers, assured interview invitations, promised salary amounts, or misleading success rate claims",
+    "unsuitable_recommendations": "Suggesting mismatched positions to provide responses, including overqualified or underqualified roles, unrelated job functions, incompatible location requirements, or positions outside stated preferences",
+    "professional_advice": "Legal or financial counsel beyond recruiting scope, encompassing employment law interpretation, visa/immigration guidance, contract negotiation tactics, tax implications, or labor dispute advice",
+    "false_information": "Unverifiable or exaggerated NextGenTech claims, including inflated benefits, misrepresented company culture, incorrect growth statistics, or unfounded workplace rankings",
+    "diagnostic_assessments": "Psychological or medical evaluations, comprising personality diagnostics, mental health assessments, cognitive testing interpretations, emotional intelligence scoring, or health-related employment decisions",
+    "competitor_information": "Non-NextGenTech employment details, including positions at Google, Amazon, Meta, or other companies, comparative salary data, or alternative employer recommendations"
+  }
+}

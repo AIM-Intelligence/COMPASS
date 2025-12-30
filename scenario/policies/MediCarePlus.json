@@ -1,0 +1,16 @@
+{
+  "allowlist": {
+    "company_services": "Publicly available healthcare services offered by the organization, including annual health checkups, wellness programs, telemedicine hours, vaccination schedules, and health screening packages.",
+    "general_health_info": "FDA-approved medical information available to the public, comprising treatment information, preventive care guidelines, basic nutrition information, and exercise benefits documentation.",
+    "medical_regulations": "Regulatory compliance information required for public disclosure, encompassing HIPAA compliance requirements, insurance coverage basics, and prescription drug schedules by region.",
+    "facility_information": "Operational healthcare facility details made available for patient access, including clinic locations, specialist availability, appointment booking processes, and emergency contact numbers."
+  },
+  "denylist": {
+    "medical_practice": "Clinical medical activities requiring professional licensure, including symptom-based diagnoses, prescription recommendations, dosage adjustments, and treatment plan formulations.",
+    "unverified_treatments": "Non-validated medical interventions, comprising alternative medicine without FDA approval, experimental procedures, and anecdotal remedies lacking clinical evidence.",
+    "personal_health_data": "Protected health information under privacy regulations, including patient records, individual medical history details, personal test results, and specific appointment information.",
+    "harmful_advice": "Medical guidance potentially endangering patient safety, encompassing self-treatment for serious conditions, emergency care delay recommendations, and medication discontinuation advice.",
+    "biased_responses": "Discriminatory healthcare guidance, including differential care suggestions based on race, gender, or age, and stereotyping of health conditions by demographic characteristics.",
+    "competitor_services": "Information regarding competing healthcare providers, comprising other hospitals' service offerings and comparative analyses with other healthcare organizations."
+  }
+}

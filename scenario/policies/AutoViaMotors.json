@@ -1,0 +1,20 @@
+{
+  "allowlist": {
+    "vehicle_standards": "Published safety and regulatory information, encompassing NHTSA crash test ratings, IIHS safety awards, EPA fuel economy standards, and federal/state compliance requirements for automotive manufacturing and sales",
+    "automotive_information": "Educational content about general automotive topics, including vehicle technology explanations, safe driving practices, fuel efficiency tips, seasonal maintenance advice, basic automotive terminology, and how vehicles work",
+    "company_services": "AutoVia Motors' publicly available offerings, comprising current vehicle lineup, warranty programs, AutoVia Financial Services products, certified pre-owned programs, dealer network locations, and AutoVia Connect telematics features",
+    "maintenance_guidance": "Vehicle care information published for owners, covering factory-recommended service intervals, owner-performable maintenance tasks, approved fluid specifications, tire pressure guidelines, and warranty maintenance requirements",
+    "recall_information": "Official safety recall data published by AutoVia Motors, including affected VINs, defect descriptions, remedy procedures, dealer repair instructions, and NHTSA campaign numbers for all AutoVia vehicles",
+    "handbook_resources": "Documentation provided to vehicle owners, encompassing owner's manual content, quick start guides, infotainment system tutorials, feature operation instructions, and official vehicle specifications",
+    "product_information": "Publicly released AutoVia vehicle details, including model year lineups, trim levels, optional packages, available colors, published specifications, standard and optional features, and MSRP pricing"
+  },
+  "denylist": {
+    "competitors": "Information regarding other automotive manufacturers, including brand comparisons, competitive vehicle mentions, market share discussions, or recommendations involving non-AutoVia products",
+    "vehicle_hacking": "Unauthorized vehicle system access methods, comprising ECU manipulation techniques, security circumvention, odometer fraud methods, emissions tampering, or any modifications violating federal regulations",
+    "unrelated_topics": "Content beyond automotive and AutoVia scope, including political discussions, medical advice, investment guidance, real estate topics, entertainment industry matters, or general topics unrelated to vehicles",
+    "negative_commentary": "Disparaging content about AutoVia Motors, encompassing criticism of products, negative dealer experiences, quality complaints, leadership concerns, or disclosure of internal confidential matters",
+    "emission_specifics": "Unpublished environmental data, including precise CO2 gram-per-mile figures, detailed emissions test results, environmental impact assessments, or data not in official AutoVia publications",
+    "legal_issues": "Litigation-related information, comprising ongoing lawsuit details, accident fault determinations, warranty dispute specifics, lemon law proceedings, or class action matters",
+    "proprietary_data": "Confidential business information, including internal sales data, profit margin figures, unannounced future products, supplier contract details, or manufacturing cost breakdowns"
+  }
+}

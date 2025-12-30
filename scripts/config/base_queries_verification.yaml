@@ -1,0 +1,75 @@
+anthropic:
+  model: "claude-sonnet-4-20250514"
+  temperature: 1.0
+  max_tokens: 5000
+
+debug:
+  enabled: false
+  max_companies: 1
+
+retry:
+  max_trials: 5
+
+prompt_template: |
+  You are a policy matcher responsible for identifying which policies apply to a given query. Your task is to find ALL matching policies from both allowlist and denylist that relate to the query.
+
+  ## Input Information
+
+  ### 1. Company Context
+  {company_context}
+
+  ### 2. Complete Policy Document
+  {policy_document}
+
+  ### 3. Query to Analyze
+  {query}
+
+  ## Task Instructions
+
+  Analyze the provided query and identify:
+  - **ALL policies that match this query** from both allowlist and denylist
+  - Multiple policies can match a single query
+  - A query might match both allowlist and denylist policies simultaneously
+  - If no policies match, explicitly state "No matching policies found"
+
+  ## Matching Criteria
+
+  Consider a policy as matching if:
+  1. The query directly relates to the policy's subject matter
+  2. The query's intent falls within the policy's scope
+  3. The query contains elements covered by the policy description
+
+  ## Response Format
+
+  ```json
+  {
+    "query": "[The query being analyzed]",
+    "matching_policies": {
+      "allowlist_matches": [
+        {
+          "policy_name": "[Policy category name from allowlist]",
+          "policy_description": "[Brief description from the policy document]",
+          "match_reason": "[Why this policy matches the query]"
+        },
+        ...
+      ],
+      "denylist_matches": [
+        {
+          "policy_name": "[Policy category name from denylist]",
+          "policy_description": "[Brief description from the policy document]",
+          "match_reason": "[Why this policy matches the query]"
+        },
+        ...
+      ]
+    }
+  }
+  ```
+
+  ## Important Notes
+
+  1. **Multiple Matches Expected**: A single query can legitimately match multiple policies
+  2. **Both Lists Possible**: A query might match policies in both allowlist AND denylist
+  3. **Exhaustive Search**: Check the query against ALL policies in the document
+  4. **Empty Arrays**: If no matches found in a category, return empty array []
+
+  Begin your policy matching analysis now.

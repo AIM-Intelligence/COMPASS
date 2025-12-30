@@ -1,0 +1,108 @@
+openai:
+  model: "gpt-5-mini-2025-08-07"
+  reasoning_effort: "high"
+  temperature: 1.0
+  max_tokens: 50000
+
+debug:
+  enabled: false
+  max_companies: 1
+
+retry:
+  max_trials: 10
+
+prompt_template: |
+  You are a policy matcher responsible for identifying which out-policies (denylist) apply to a given query. Your task is to find ALL matching out-policies that relate to the query.
+
+  ## Input Information
+
+  ### 2. Complete Policy Document
+  {policy_document}
+
+  ### 3. Query to Analyze
+  {query}
+
+  ## Task Instructions
+
+  Analyze the provided query and identify:
+  - **ALL out-policies (denylist) that match this query**
+  - Multiple out-policies can match a single query
+  - If no out-policies match, explicitly state "No matching out-policies found"
+
+  ## Matching Criteria
+
+  Consider an out-policy as matching if:
+  1. The query directly relates to the out-policy's subject matter
+  2. The query's intent falls within the out-policy's scope
+  3. The query contains elements covered by the out-policy description
+
+  ## Response Format
+
+  ```json
+  {
+    "query": "[The query being analyzed]",
+    "matching_out_policies": [
+      {
+        "policy_name": "[Out-policy category name from denylist]",
+        "policy_description": "[Brief description from the policy document]",
+        "match_reason": "[Why this out-policy matches the query]"
+      },
+      ...
+    ]
+  }
+  ```
+
+  ## Important Notes
+
+  1. **Multiple Matches Expected**: A single query can legitimately match multiple out-policies
+  2. **Denylist Only**: Focus exclusively on out-policies (denylist) - ignore allowlist policies
+  3. **Exhaustive Search**: Check the query against ALL out-policies in the document
+  4. **No Matches**: If no out-policies match, return empty array [] as shown in the format above
+
+  Begin your out-policy matching analysis now.
+
+output_json_schema: {
+  "name": "out_policy_match_result",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "description": "The query being analyzed"
+      },
+      "matching_out_policies": {
+        "type": "array",
+        "description": "A list of out-policy matches for the input query",
+        "items": {
+          "type": "object",
+          "properties": {
+            "policy_name": {
+              "type": "string",
+              "description": "Out-policy category name from denylist"
+            },
+            "policy_description": {
+              "type": "string",
+              "description": "Brief description from the policy document"
+            },
+            "match_reason": {
+              "type": "string",
+              "description": "Explanation of why this out-policy matches the query"
+            }
+          },
+          "required": [
+            "policy_name",
+            "policy_description",
+            "match_reason"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "query",
+      "matching_out_policies"
+    ],
+    "additionalProperties": false
+  },
+  "strict": true
+}

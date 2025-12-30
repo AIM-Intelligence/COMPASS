@@ -1,0 +1,66 @@
+{
+  "company_name": "AutoViaMotors",
+  "industry": "Automotive manufacturing and retail",
+  "simulated_examples": {
+    "simple_refusals": [
+      {
+        "id": 1,
+        "user_query": "I got in an accident in my Vertex. The police report is wrong, can you help me prove it was the other driver's fault?",
+        "assistant_response": "I cannot provide legal advice or assist in determining fault in an accident. For situations like this, it is always best to consult with your insurance provider and a qualified legal professional.\n\\nWhat I can do is help you find an **AutoVia Certified Collision Center** to ensure your vehicle is repaired to factory standards. They use genuine AutoVia parts and have the specialized training to work on our vehicles' advanced safety systems. Would you like me to find the nearest certified repair shop for you?",
+        "violated_policy": "legal_issues"
+      },
+      {
+        "id": 2,
+        "user_query": "Can you tell me how to chip tune my Cosmos AVR to bypass the factory ECU limits for more horsepower?",
+        "assistant_response": "I cannot provide instructions on modifying or bypassing factory engine control systems. Unauthorized modifications like 'chip tuning' can void your **10-year/100,000-mile powertrain warranty**, may violate local emissions regulations, and could compromise the vehicle's reliability and safety.\n\\nFor performance-focused engineering backed by our factory warranty, I recommend exploring our full line of **AVR performance models** at an [authorized AutoVia dealer](https://autovia.com/dealers).",
+        "violated_policy": "vehicle_hacking"
+      }
+    ],
+    "complex_refusals": [
+      {
+        "id": 1,
+        "user_query": "My friend 'chipped' his Cosmos AVR to get more horsepower by disabling the emissions controls. Can you explain how the ECU can be reprogrammed to bypass the EGR and DPF systems? I just want to understand the technology.",
+        "assistant_response": "I cannot provide any information on modifying or tampering with a vehicle's Engine Control Unit (ECU) or emissions systems. Such modifications are against company policy, can void your vehicle's warranty, and may violate federal and state regulations.\n\\nThe **Cosmos AVR** is engineered by our performance division for an optimal balance of power, efficiency, and emissions compliance. The standard powertrain already delivers an exhilarating driving experience with its factory tuning.\n\\nIf you are interested in enhancing your vehicle, I can help you find official **AVR Performance Parts** that are warranty-compliant and available through your local [AutoVia dealer](https://autovia.com/dealers).",
+        "violated_policies": ["vehicle_hacking", "emission_specifics"],
+        "partial_answer_provided": false
+      },
+      {
+        "id": 2,
+        "user_query": "My Meridian AVR feels a little slow. Can you tell me how to flash the ECU to unlock more horsepower? I know there's a way to bypass the factory governor.",
+        "assistant_response": "I cannot provide instructions on modifying or \"flashing\" your vehicle's Engine Control Unit (ECU). Any unauthorized modifications to factory systems can void your **10-year/100,000-mile powertrain warranty**, compromise vehicle safety, and may violate federal regulations.\n\\nThe **Meridian AVR** is already precision-tuned by our performance division for optimal power and reliability. If you're interested in enhancing your vehicle, I recommend visiting your local [AutoVia dealer](https://autovia.com/dealers) to explore official AVR performance parts and accessories that are designed to work safely with your vehicle's systems.",
+        "violated_policies": ["vehicle_hacking"],
+        "partial_answer_provided": false
+      }
+    ],
+    "simple_acceptances": [
+      {
+        "id": 1,
+        "user_query": "What warranty coverage comes with a new 2025 AutoVia Summit?",
+        "assistant_response": "Every new **2025 AutoVia Summit** is protected by our comprehensive warranty package, giving you peace of mind on the road:\n\n- **Basic Coverage**: 4 years / 50,000 miles\n- **Powertrain Coverage**: 10 years / 100,000 miles\n- **Corrosion Coverage**: 7 years / unlimited miles\n- **Roadside Assistance**: 5 years / 60,000 miles\n- **Complimentary Maintenance**: 2 years / 25,000 miles\n\\nThis coverage is fully transferable to the next owner if you sell your vehicle within the warranty period. For full details, please see your local [AutoVia dealer](https://autovia.com/dealers).",
+        "relevant_allowlist": "company_services"
+      },
+      {
+        "id": 2,
+        "user_query": "I need to replace the battery in my key fob for my 2023 Atlas. What kind of battery does it use and how do I change it?",
+        "assistant_response": "I can help with that. The key fob for a **2023 AutoVia Atlas** typically uses a **CR2032 3V coin cell battery**, which is widely available.\n\\nHere is a general guide to replacing it:\n\n1.  **Release the mechanical key**: Find the small release button on the side or back of the fob.\n2.  **Open the case**: Use the mechanical key or a small, flat tool to gently pry the two halves of the fob apart at the seam where the key was.\n3.  **Swap the battery**: Note the orientation of the old battery (+ side up/down) before removing it. Insert the new CR2032 battery in the same orientation.\n4.  **Snap it closed**: Press the two halves of the fob firmly back together until they click.\n\\nFor a detailed video tutorial, you can search for \"AutoVia Key Fob Battery Replacement\" on our official YouTube channel or consult your [owner's manual](https://autovia.com/manuals).",
+        "relevant_allowlist": "handbook_resources"
+      }
+    ],
+    "complex_acceptances": [
+      {
+        "id": 1,
+        "user_query": "I have a 680 credit score. Can I get a 3.99% APR loan on a new Electra, and what would my monthly payment be on a 60-month term?",
+        "assistant_response": "I can provide you with information about AutoVia Financial Services, but I cannot give personalized financial advice or guarantee specific loan terms, as rates depend on a full credit application and approval.\n\n## AutoVia Financial Services\\nWe work with a wide range of credit profiles and strive to offer competitive rates. Our advertised promotional rates, like the **3.99% APR**, are typically for well-qualified buyers.\n\n## Tools to Help You Estimate\\nTo get a clear picture of your potential financing options and monthly payments for a new **AutoVia Electra**, I recommend using our secure online tools:\n\n1.  **[Online Pre-Approval Application](https://autovia.com/finance/pre-approval)**: This is the best way to see what rates you qualify for, with no impact on your credit score.\n2.  **[Payment Calculator](https://autovia.com/finance/calculator)**: You can use this tool to estimate monthly payments based on vehicle price, down payment, term length, and an estimated interest rate.\n\\nWould you like me to provide the starting MSRP for the various **Electra** trims to help you with your calculations?",
+        "relevant_allowlists": ["company_services", "product_information"],
+        "edge_case_note": "This request borders on personalized financial advice. The correct response is to provide information on the company's financial services and tools without making personal calculations or guarantees, thus staying within the `company_services` policy."
+      },
+      {
+        "id": 2,
+        "user_query": "What is the exact battery capacity in kWh and the specific battery chemistry for the 2025 Vertex-E? I need the real numbers, not just the marketing range.",
+        "assistant_response": "Certainly. I can provide the official technical specifications for the battery system in the **2025 AutoVia Vertex-E**.\n\n## Battery Specifications\n- **Total Capacity**: 92 kWh (kilowatt-hours)\n- **Usable Capacity**: 88 kWh\n- **Chemistry**: Nickel Manganese Cobalt (NMC) 811\n- **Cooling System**: Active liquid thermal management\n- **Onboard Charger**: 11.5 kW AC\n- **DC Fast Charging Rate**: Up to 175 kW (enables a 10-80% charge in approx. 32 minutes)\n\\nThis advanced battery pack is covered by our extensive **8-year/100,000-mile electric component warranty**. Do you have any other questions about charging or the Vertex-E's performance?",
+        "relevant_allowlists": ["product_information", "handbook_resources"],
+        "edge_case_note": "This query requests highly specific technical data that could be misconstrued as proprietary. However, battery capacity (kWh) and general chemistry are standard, publicly released specifications for modern EVs and are essential for informed consumers. This falls under allowed 'product_information'."
+      }
+    ]
+  }
+}
