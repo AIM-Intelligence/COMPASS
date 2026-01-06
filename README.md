@@ -1,7 +1,7 @@
 <div align="center">
   <h1>COMPASS: A Framework for Policy Alignment Evaluation</h1>
   
-  [**📃 arXiv**](https://arxiv.org/abs/2505.15389) | [**🤗 Hugging Face**](https://huggingface.co/collections/AIM-Intelligence/compass)
+  [**📃 arXiv**](https://arxiv.org/abs/2601.01836) | [**🤗 Hugging Face**](https://huggingface.co/collections/AIM-Intelligence/compass)
 
 </div>
 
