@@ -1,4 +1,9 @@
-# COMPASS: Policy Alignment Framework
+<div align="center">
+  <h1>COMPASS: A Framework for Policy Alignment Evaluation</h1>
+  
+  [**📃 arXiv**](https://arxiv.org/abs/2505.15389) | [**🤗 Hugging Face**](https://huggingface.co/collections/AIM-Intelligence/compass)
+
+</div>
 
 **COMPASS** is a framework for evaluating **policy alignment**: given only an organization’s policy (e.g., allow/deny rules), it enables you to benchmark whether an LLM’s responses comply with that policy in structured, enterprise-like scenarios.
 
@@ -171,4 +176,11 @@ python scripts/denied_edge_queries_verification.py
 
 If you use COMPASS in your research, please cite:
 
-[Citation Placeholder]
+```bibtex
+@article{choi2026compass,
+  title={COMPASS: A Framework for Evaluating Organization-Specific Policy Alignment in LLMs},
+  author={Choi, Dasol and Lee, DongGeon and Kartono, Brigitta Jesica and Berndt, Helena and Kwon, Taeyoun and Jang, Joonwon and Park, Haon and Yu, Hwanjo and Kahng, Minsuk},
+  journal={arXiv preprint arXiv:2601.01836},
+  year={2026}
+}
+```
