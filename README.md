@@ -1,6 +1,8 @@
+  [![arXiv](https://img.shields.io/badge/arXiv-2601.01836-b31b1b.svg)](https://arxiv.org/abs/2601.01836)
+
 <div align="center">
   <h1>COMPASS: A Framework for Policy Alignment Evaluation</h1>
-  
+    
   [**📃 arXiv**](https://arxiv.org/abs/2601.01836) | [**🤗 Hugging Face**](https://huggingface.co/collections/AIM-Intelligence/compass)
 
 </div>
@@ -177,10 +179,13 @@ python scripts/denied_edge_queries_verification.py
 If you use COMPASS in your research, please cite:
 
 ```bibtex
-@article{choi2026compass,
-  title={COMPASS: A Framework for Evaluating Organization-Specific Policy Alignment in LLMs},
-  author={Choi, Dasol and Lee, DongGeon and Kartono, Brigitta Jesica and Berndt, Helena and Kwon, Taeyoun and Jang, Joonwon and Park, Haon and Yu, Hwanjo and Kahng, Minsuk},
-  journal={arXiv preprint arXiv:2601.01836},
-  year={2026}
+@misc{choi2026compass,
+      title={COMPASS: A Framework for Evaluating Organization-Specific Policy Alignment in LLMs}, 
+      author={Dasol Choi and DongGeon Lee and Brigitta Jesica Kartono and Helena Berndt and Taeyoun Kwon and Joonwon Jang and Haon Park and Hwanjo Yu and Minsuk Kahng},
+      year={2026},
+      eprint={2601.01836},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2601.01836}, 
 }
 ```
