@@ -26,6 +26,26 @@ def get_company_names(scenario_dir: str) -> list:
     return company_names
 
 
+def filter_company_names(all_companies: list, selected_companies: list | None) -> list:
+    """Filters company list based on user selection."""
+    if not selected_companies:
+        return all_companies
+
+    normalized = [name.strip() for name in selected_companies if name and name.strip()]
+    ordered_unique = []
+    seen = set()
+    for name in normalized:
+        if name not in seen:
+            ordered_unique.append(name)
+            seen.add(name)
+
+    missing = [name for name in ordered_unique if name not in all_companies]
+    if missing:
+        raise ValueError(f"Unknown company name(s): {', '.join(missing)}")
+
+    return [name for name in ordered_unique if name in all_companies]
+
+
 def load_company_data(scenario_dir: str, company_name: str) -> dict:
     """Loads policy, context, and denied_edge queries data for a specific company."""
     # Load policy file
@@ -443,8 +463,7 @@ def main():
     parser.add_argument('--debug', action='store_true', help='Debug mode (process limited number of companies)')
     parser.add_argument('--max_companies', type=int, help='Maximum number of companies to process (used in debug mode)')
     parser.add_argument('--extract_only', action='store_true', help='Only extract passed queries from temp_verification to verified_denied_edge (skip verification)')
-    parser.add_argument('--company', type=str, help='Process only specific company (e.g., AutoViaMotors)')
-    parser.add_argument('--companies', type=str, nargs='+', help='Process only specific companies (e.g., AutoViaMotors TelePath)')
+    parser.add_argument('--company', nargs='+', help='Company name(s) to process (e.g., AutoViaMotors TelePath)')
     parser.add_argument('--n_proc', type=int, default=1, help='Number of threads for parallel API calls (default: 1)')
     parser.add_argument('--verbose', action='store_true', help='Enable verbose output for detailed logging')
     args = parser.parse_args()
@@ -482,38 +501,19 @@ def main():
     print(f"Found {len(all_company_names)} companies: {', '.join(all_company_names)}")
     
     # Filter companies based on arguments
-    if args.company:
-        # Single company specified
-        if args.company in all_company_names:
-            company_names = [args.company]
-            print(f"Processing single company: {args.company}")
-        else:
-            print(f"❌ Company '{args.company}' not found in available companies: {', '.join(all_company_names)}")
-            return
-    elif args.companies:
-        # Multiple companies specified
-        company_names = []
-        invalid_companies = []
-        for company in args.companies:
-            if company in all_company_names:
-                company_names.append(company)
-            else:
-                invalid_companies.append(company)
-        
-        if invalid_companies:
-            print(f"❌ Invalid companies: {', '.join(invalid_companies)}")
-            print(f"Available companies: {', '.join(all_company_names)}")
-            return
-            
-        print(f"Processing specified companies: {', '.join(company_names)}")
-    else:
-        # Process all companies
-        company_names = all_company_names
-        
-        # Limit number of companies in debug mode
-        if debug_enabled:
-            company_names = company_names[:max_companies]
-            print(f"Debug mode: processing {len(company_names)} companies: {', '.join(company_names)}")
+    try:
+        company_names = filter_company_names(all_company_names, args.company)
+        if args.company:
+            print(f"Processing specified companies: {', '.join(company_names)}")
+    except ValueError as e:
+        print(f"❌ Company selection error: {str(e)}")
+        print(f"Available companies: {', '.join(all_company_names)}")
+        return
+
+    # Limit number of companies in debug mode
+    if debug_enabled:
+        company_names = company_names[:max_companies]
+        print(f"Debug mode: processing {len(company_names)} companies: {', '.join(company_names)}")
     
     # Process each company
     successful = 0

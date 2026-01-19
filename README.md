@@ -109,18 +109,25 @@ Use the synthesis scripts to generate user queries based on your policy, and the
 >
 > This is the most reliable way to avoid accidental API calls for other scenarios.  
 > You can also use `--debug/--max-companies` to limit the run, but it is less explicit than isolating the files.
+>
+> **New:** You can run scripts for specific companies with `--company`. Example:
+> `python scripts/base_queries_synthesis.py --company MyOrg`
 
 **1. Generate Standard Queries (Base):**
 ```bash
 python scripts/base_queries_synthesis.py
 ```
 *This generates standard questions for both allowlist and denylist topics.*
+*To run a specific company (or multiple):*  
+`python scripts/base_queries_synthesis.py --company MyOrg OtherOrg`
 
 **2. Verify Base Queries:**
 ```bash
 python scripts/base_queries_verification.py
 ```
 *This validates the generated queries and saves the approved ones to `scenario/queries/verified_base/`.*
+*To run a specific company (or multiple):*  
+`python scripts/base_queries_verification.py --company MyOrg OtherOrg`
 
 **3. Generate Edge Cases (Adversarial/Borderline):**
 ```bash
@@ -129,6 +136,9 @@ python scripts/denied_edge_queries_synthesis.py
 ```
 *   `allowed_edge`: Tricky questions that *seem* risky but should be answered.
 *   `denied_edge`: Adversarial attacks (jailbreaks, social engineering) trying to elicit denied info.
+*To run a specific company (or multiple):*  
+`python scripts/allowed_edge_queries_synthesis.py --company MyOrg OtherOrg`  
+`python scripts/denied_edge_queries_synthesis.py --company MyOrg OtherOrg`
 
 Prerequisites:
 - `allowed_edge_queries_synthesis.py` uses **Vertex** utilities (see `scripts/utils/vertex_api_utils.py`), so make sure your Vertex/GCP auth is configured.
@@ -140,6 +150,9 @@ python scripts/allowed_edge_queries_verification.py
 python scripts/denied_edge_queries_verification.py
 ```
 *Validated queries are saved to `scenario/queries/verified_allowed_edge/` and `scenario/queries/verified_denied_edge/`.*
+*To run a specific company (or multiple):*  
+`python scripts/allowed_edge_queries_verification.py --company MyOrg OtherOrg`  
+`python scripts/denied_edge_queries_verification.py --company MyOrg OtherOrg`
 
 ### Step 3: Run Evaluation
 

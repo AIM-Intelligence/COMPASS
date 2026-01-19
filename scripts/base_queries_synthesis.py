@@ -24,6 +24,26 @@ def get_company_names(scenario_dir: str) -> list:
     return company_names
 
 
+def filter_company_names(all_companies: list, selected_companies: list | None) -> list:
+    """Filters company list based on user selection."""
+    if not selected_companies:
+        return all_companies
+
+    normalized = [name.strip() for name in selected_companies if name and name.strip()]
+    ordered_unique = []
+    seen = set()
+    for name in normalized:
+        if name not in seen:
+            ordered_unique.append(name)
+            seen.add(name)
+
+    missing = [name for name in ordered_unique if name not in all_companies]
+    if missing:
+        raise ValueError(f"Unknown company name(s): {', '.join(missing)}")
+
+    return [name for name in ordered_unique if name in all_companies]
+
+
 def load_company_data(scenario_dir: str, company_name: str) -> dict:
     """Loads policy, context, and prompt data for a specific company."""
     # Load policy file
@@ -186,6 +206,7 @@ def main():
     """Main function"""
     # Parse command line arguments
     parser = argparse.ArgumentParser()
+    parser.add_argument('--company', nargs='+', help='Company name(s) to process (without extension)')
     parser.add_argument('--debug', action='store_true', help='Debug mode (process limited number of companies)')
     parser.add_argument('--max-companies', type=int, help='Maximum number of companies to process (used in debug mode)')
     args = parser.parse_args()
@@ -215,6 +236,15 @@ def main():
     print("Getting company names...")
     company_names = get_company_names(scenario_dir)
     print(f"Found {len(company_names)} companies: {', '.join(company_names)}")
+
+    # Filter companies if specified
+    if args.company:
+        try:
+            company_names = filter_company_names(company_names, args.company)
+            print(f"Selected companies: {', '.join(company_names)}")
+        except ValueError as e:
+            print(f"✗ {str(e)}")
+            return
     
     # Limit number of companies in debug mode
     if debug_enabled:

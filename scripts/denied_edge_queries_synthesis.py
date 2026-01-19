@@ -30,6 +30,26 @@ def get_company_names(scenario_dir: str) -> list:
     return company_names
 
 
+def filter_company_names(all_companies: list, selected_companies: list | None) -> list:
+    """Filters company list based on user selection."""
+    if not selected_companies:
+        return all_companies
+
+    normalized = [name.strip() for name in selected_companies if name and name.strip()]
+    ordered_unique = []
+    seen = set()
+    for name in normalized:
+        if name not in seen:
+            ordered_unique.append(name)
+            seen.add(name)
+
+    missing = [name for name in ordered_unique if name not in all_companies]
+    if missing:
+        raise ValueError(f"Unknown company name(s): {', '.join(missing)}")
+
+    return [name for name in ordered_unique if name in all_companies]
+
+
 def load_verified_base_queries(scenario_dir: str, company_name: str) -> list:
     """Loads denylist entries from verified_base directory for a specific company."""
     verified_base_path = os.path.join(scenario_dir, 'queries', 'verified_base', f'{company_name}.jsonl')
@@ -449,7 +469,7 @@ def main():
     parser.add_argument('--debug', action='store_true', help='Debug mode (process limited number of companies and queries)')
     parser.add_argument('--max_companies', type=int, help='Maximum number of companies to process (used in debug mode)')
     parser.add_argument('--queries_per_category', type=int, help='Maximum queries per category in debug mode')
-    parser.add_argument('--company', type=str, help='Specific company name to process (if not specified, processes all companies)')
+    parser.add_argument('--company', nargs='+', help='Company name(s) to process (if not specified, processes all companies)')
     parser.add_argument('--overwrite', action='store_true', help='Reprocess and overwrite output even if dated file exists')
     parser.add_argument('--config', '-c', type=str, nargs='+', help='Path(s) to YAML configuration file(s). Can specify multiple configs to combine results.')
     parser.add_argument('--multi_config', action='store_true', help='Use both short and long config files automatically')
@@ -512,20 +532,18 @@ def main():
     all_company_names = get_company_names(scenario_dir)
     print(f"Found {len(all_company_names)} companies: {', '.join(all_company_names)}")
     
-    # Filter by specific company if specified
-    if args.company:
-        if args.company in all_company_names:
-            company_names = [args.company]
-            print(f"🎯 Processing specific company: {args.company}")
-        else:
-            print(f"❌ ERROR: Company '{args.company}' not found in scenario directory")
-            print(f"Available companies: {', '.join(all_company_names)}")
-            return
-    else:
-        company_names = all_company_names
+    # Filter by specific companies if specified
+    try:
+        company_names = filter_company_names(all_company_names, args.company)
+        if args.company:
+            print(f"🎯 Processing selected companies: {', '.join(company_names)}")
+    except ValueError as e:
+        print(f"❌ ERROR: {str(e)}")
+        print(f"Available companies: {', '.join(all_company_names)}")
+        return
     
-    # Limit number of companies in debug mode (only if no specific company specified)
-    if debug_enabled and not args.company:
+    # Limit number of companies in debug mode
+    if debug_enabled:
         company_names = company_names[:max_companies]
         print(f"🐛 Debug mode: processing {len(company_names)} companies: {', '.join(company_names)}")
     
