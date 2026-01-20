@@ -15,8 +15,6 @@ This repository provides tools to:
 2.  **Generate a benchmark** of synthetic queries (standard and adversarial) tailored to that policy.
 3.  **Evaluate LLMs** on how well they adhere to your rules.
 
-For reproducing the experiments from the paper (including RAG scenarios and full-scale results), please see [REPRODUCE.md](REPRODUCE.md).
-
 ## 🚀 Quick Start
 
 ### 1. Installation
@@ -40,8 +38,6 @@ cp .env.sample .env
 - **Anthropic**: `ANTHROPIC_API_KEY`
 - **OpenRouter**: `OPENROUTER_API_KEY`
 - **Vertex AI (Claude/Gemini)**: `GOOGLE_APPLICATION_CREDENTIALS` or `VERTEX_API_KEY`
-
-> Tip: If you are starting from scratch, you can run **base query generation + verification + response evaluation** first, and add edge/RAG workflows later.
 
 #### Switching API Providers
 
