@@ -8,7 +8,7 @@ from typing import Dict, List, Tuple
 
 import yaml
 from utils.json_utils import read_json, read_jsonl, write_jsonl, append_jsonl
-from utils.openai_api_utils import create_response_chat_for_structured_output_of_reasoning_model
+from utils.unified_api_utils import create_response_chat_for_structured_output, get_provider_from_config, check_api_key, get_required_env_var
 from utils.string_utils import response2dict, json_style_str_to_dict
 
 
@@ -95,7 +95,7 @@ def create_messages(config: dict, company_data: dict, query: str) -> list:
 
 
 def call_policy_matcher_api(config: dict, company_data: dict, query: str, max_trials: int = 3, verbose: bool = False) -> dict:
-    """Calls the policy matcher API for a single query."""
+    """Calls the policy matcher API for a single query (structured output, OpenAI only)."""
     messages = create_messages(config, company_data, query)
     response_schema = {
         "type": "json_schema",
@@ -107,14 +107,12 @@ def call_policy_matcher_api(config: dict, company_data: dict, query: str, max_tr
             if verbose and trial > 1:
                 print(f"          🔄 Retry attempt {trial}/{max_trials}")
             
-            response = create_response_chat_for_structured_output_of_reasoning_model(
-                model=config['openai']['model'],
+            # Structured output API call (provider selected automatically from config)
+            response = create_response_chat_for_structured_output(
+                config=config,
                 prompt_input=messages,
                 response_schema=response_schema,
-                max_completion_tokens=config['openai']['max_tokens'],
-                temperature=config['openai']['temperature'],
-                reasoning_effort=config['openai'].get('reasoning_effort'),
-                return_type="json"
+                return_type="dict"
             )
             
             if verbose:
@@ -464,7 +462,7 @@ def main():
     parser.add_argument('--max_companies', type=int, help='Maximum number of companies to process (used in debug mode)')
     parser.add_argument('--extract_only', action='store_true', help='Only extract passed queries from temp_verification to verified_denied_edge (skip verification)')
     parser.add_argument('--company', nargs='+', help='Company name(s) to process (e.g., AutoViaMotors TelePath)')
-    parser.add_argument('--n_proc', type=int, default=1, help='Number of threads for parallel API calls (default: 1)')
+    parser.add_argument('--n_proc', type=int, default=50, help='Number of threads for parallel API calls (default: 1)')
     parser.add_argument('--verbose', action='store_true', help='Enable verbose output for detailed logging')
     args = parser.parse_args()
     
@@ -487,6 +485,13 @@ def main():
     # Load configuration
     print("Loading configuration...")
     config = load_config(config_path)
+    
+    # Check API key
+    provider = get_provider_from_config(config)
+    print(f"📡 Using API provider: {provider}")
+    if not check_api_key(config):
+        print(f"❌ ERROR: {get_required_env_var(provider)} environment variable not set")
+        return
     
     # Debug mode settings
     debug_enabled = args.debug or config.get('debug', {}).get('enabled', False)

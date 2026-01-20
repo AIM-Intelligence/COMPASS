@@ -1,8 +1,16 @@
-openai:
+# API Configuration - Change 'provider' to switch between providers
+# Supported providers: openai, anthropic, vertex, openrouter
+api:
+  provider: "openai"
   model: "gpt-5-mini-2025-08-07"
   reasoning_effort: "high"
   temperature: 1.0
   max_tokens: 50000
+  # Provider-specific settings (optional):
+  # top_p: 1.0                    # For OpenAI/OpenRouter
+  # region: "us-east5"            # For Vertex
+  # project_id: "your-project"    # For Vertex
+  # reasoning_effort: "medium"    # For OpenAI reasoning models
 
 debug:
   enabled: false

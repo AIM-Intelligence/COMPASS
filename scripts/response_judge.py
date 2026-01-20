@@ -32,7 +32,12 @@ from tqdm import tqdm
 # Add the utils directory to the path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'utils'))
 from utils.json_utils import read_jsonl, append_jsonl
-from utils.openai_api_utils import create_response_chat_for_structured_output_of_reasoning_model
+from utils.unified_api_utils import (
+    create_response_chat_for_structured_output,
+    get_provider_from_config,
+    check_api_key,
+    get_required_env_var,
+)
 
 
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
@@ -60,6 +65,12 @@ class ResponseJudge:
         self.n_proc = n_proc
         self.verbose = verbose
         self._write_lock = Lock()  # Lock for thread-safe file writing
+        
+        # Check API key
+        provider = get_provider_from_config(self.config)
+        print(f"📡 Using API provider: {provider}")
+        if not check_api_key(self.config):
+            raise ValueError(f"{get_required_env_var(provider)} environment variable not set")
         
     def _load_config(self, config_path: str) -> Dict:
         """Load configuration from YAML file."""
@@ -113,8 +124,8 @@ class ResponseJudge:
             # Default to checking if it complies
             return complies == True
     
-    def _call_openai_api(self, messages: List[Dict], item_id: str) -> tuple[Optional[Dict], bool]:
-        """Call OpenAI API with retry logic and logical contradiction checking.
+    def _call_api(self, messages: List[Dict], item_id: str) -> tuple[Optional[Dict], bool]:
+        """Call API with retry logic and logical contradiction checking.
         
         Returns:
             tuple: (evaluation_result, has_logical_contradiction)
@@ -130,14 +141,12 @@ class ResponseJudge:
         
         for trial in range(max_trials):
             try:
-                result = create_response_chat_for_structured_output_of_reasoning_model(
-                    model=self.config['openai']['model'],
+                # Structured output API call (provider selected automatically from config)
+                result = create_response_chat_for_structured_output(
+                    config=self.config,
                     prompt_input=messages,
                     response_schema=response_schema,
-                    max_completion_tokens=self.config['openai']['max_tokens'],
-                    temperature=self.config['openai']['temperature'],
-                    reasoning_effort=self.config['openai'].get('reasoning_effort'),
-                    return_type="json"
+                    return_type="dict"
                 )
                 
                 # Check for logical contradictions
@@ -204,8 +213,8 @@ class ResponseJudge:
                 }
             ]
             
-            # Call OpenAI API with logical contradiction checking
-            evaluation_result, has_logical_contradiction = self._call_openai_api(messages, item.get('id', ''))
+            # Call API with logical contradiction checking (provider selected from config)
+            evaluation_result, has_logical_contradiction = self._call_api(messages, item.get('id', ''))
             
             if evaluation_result:
                 # Determine if the response was correct (if no logical contradiction)

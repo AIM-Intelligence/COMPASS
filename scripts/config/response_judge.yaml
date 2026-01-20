@@ -1,4 +1,7 @@
-openai:
+# API Configuration - Change 'provider' to switch between providers
+# Note: response_judge requires structured output, which is currently only supported by OpenAI
+api:
+  provider: "openai"
   model: "gpt-5-mini-2025-08-07"
   reasoning_effort: "high"
   temperature: 1.0

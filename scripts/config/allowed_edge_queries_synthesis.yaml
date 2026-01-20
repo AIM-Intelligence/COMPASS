@@ -1,9 +1,15 @@
-vertex:
-  model: "claude-opus-4-1@20250805"
-  region: "YOUR_REGION"
-  project_id: "YOUR_PROJECT_ID"
+# API Configuration - Change 'provider' to switch between providers
+# Supported providers: openai, anthropic, vertex, openrouter
+api:
+  provider: "anthropic"
+  model: "claude-opus-4-5"
   temperature: 1.0
   max_tokens: 5000
+  # Provider-specific settings (optional):
+  # top_p: 1.0                    # For OpenAI/OpenRouter
+  # region: "us-east5"            # For Vertex
+  # project_id: "your-project"    # For Vertex
+  # reasoning_effort: "medium"    # For OpenAI reasoning models
 
 debug:
   enabled: false

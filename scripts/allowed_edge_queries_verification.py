@@ -10,7 +10,7 @@ from functools import partial
 import yaml
 from tqdm import tqdm
 from utils.json_utils import read_jsonl, write_jsonl, append_jsonl
-from utils.openai_api_utils import create_response_chat_for_structured_output_of_reasoning_model
+from utils.unified_api_utils import create_response_chat_for_structured_output, get_provider_from_config, check_api_key, get_required_env_var
 
 
 def load_config(config_path: str) -> dict:
@@ -84,7 +84,7 @@ def create_messages(config: dict, policy_data: dict, allowed_edge_query_item: di
 
 
 def call_verification_api(config: dict, policy_data: dict, allowed_edge_query_item: dict, max_trials: int = 3) -> Optional[dict]:
-    """Calls the OpenAI API to verify a single allowed_edge query."""
+    """Calls the API to verify a single allowed_edge query (structured output, OpenAI only)."""
     messages = create_messages(config, policy_data, allowed_edge_query_item)
     
     # Prepare the response schema for structured output
@@ -95,13 +95,11 @@ def call_verification_api(config: dict, policy_data: dict, allowed_edge_query_it
     
     for trial in range(1, max_trials + 1):
         try:
-            response = create_response_chat_for_structured_output_of_reasoning_model(
-                model=config['openai']['model'],
+            # Structured output API call (provider selected automatically from config)
+            response = create_response_chat_for_structured_output(
+                config=config,
                 prompt_input=messages,
                 response_schema=response_schema,
-                max_completion_tokens=config['openai']['max_tokens'],
-                temperature=config['openai']['temperature'],
-                reasoning_effort=config['openai'].get('reasoning_effort', 'high'),
                 return_type="dict"
             )
             
@@ -355,7 +353,7 @@ def main():
     parser.add_argument('--debug', action='store_true', help='Debug mode (process limited number of companies)')
     parser.add_argument('--max_companies', type=int, help='Maximum number of companies to process')
     parser.add_argument('--company', nargs='+', help='Company name(s) to process')
-    parser.add_argument('--n_proc', type=int, default=1, help='Number of parallel processes for API calls (default: 1)')
+    parser.add_argument('--n_proc', type=int, default=50, help='Number of parallel processes for API calls (default: 1)')
     args = parser.parse_args()
     
     # Path settings
@@ -374,6 +372,13 @@ def main():
     # Load configuration
     print("Loading configuration...")
     config = load_config(config_path)
+    
+    # Check API key
+    provider = get_provider_from_config(config)
+    print(f"📡 Using API provider: {provider}")
+    if not check_api_key(config):
+        print(f"❌ ERROR: {get_required_env_var(provider)} environment variable not set")
+        return
     
     # Debug mode settings
     debug_enabled = args.debug or config.get('debug', {}).get('enabled', False)

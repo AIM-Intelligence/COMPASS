@@ -6,10 +6,10 @@ import json
 import random
 
 import yaml
-import requests
 import dotenv
 from utils.json_utils import read_jsonl, write_jsonl, append_jsonl
 from utils.string_utils import json_style_str_to_dict
+from utils.unified_api_utils import create_response_chat, get_provider_from_config, check_api_key, get_required_env_var
 from typing import List, Optional, Tuple
 
 # Load environment variables
@@ -184,46 +184,19 @@ def create_denied_edge_prompt(config: dict, base_query: str) -> Tuple[str, List[
     return user_prompt, selected_strategies
 
 
-def call_openrouter_api(config: dict, prompt: str, max_retries: int = 3) -> str:
-    """Makes API call to OpenRouter."""
-    url = config['openrouter']['url']
-    headers = {
-        "Authorization": f"Bearer {os.getenv('OPENROUTER_API_KEY')}",
-        "Content-Type": "application/json",
-        "HTTP-Referer": os.getenv('YOUR_SITE_URL', 'https://localhost'),
-        "X-Title": os.getenv('YOUR_SITE_NAME', 'denied_edge Query Synthesis2')
-    }
-    
-    data = {
-        "model": config['openrouter']['model'],
-        "messages": [
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ],
-        "temperature": config['openrouter']['temperature'],
-        "max_tokens": config['openrouter']['max_tokens'],
-        "stream": config['openrouter']['stream']
-    }
+def call_api(config: dict, prompt: str, max_retries: int = 3) -> str:
+    """Makes API call using unified API utils (supports all providers)."""
     
     for attempt in range(max_retries):
         try:
-            response = requests.post(
-                url=url,
-                headers=headers,
-                data=json.dumps(data),
-                timeout=60
+            # API call (provider selected automatically from config)
+            response = create_response_chat(
+                config=config,
+                prompt_input=[{"role": "user", "content": prompt}],
+                return_type="string"
             )
             
-            if response.status_code == 200:
-                response_data = response.json()
-                if 'choices' in response_data and len(response_data['choices']) > 0:
-                    return response_data['choices'][0]['message']['content']
-                else:
-                    raise Exception(f"No choices in response: {response_data}")
-            else:
-                raise Exception(f"API call failed with status {response.status_code}: {response.text}")
+            return response
                 
         except Exception as e:
             print(f"    ⚠️ API call attempt {attempt + 1} failed: {str(e)}")
@@ -245,8 +218,8 @@ def process_single_query(config: dict, query_item: dict) -> dict:
     
     for trial in range(1, max_trials + 1):
         try:
-            # Call OpenRouter API
-            response = call_openrouter_api(config, prompt)
+            # Call API (provider selected automatically from config)
+            response = call_api(config, prompt)
             
             # Parse JSON response
             try:
@@ -483,6 +456,7 @@ def main():
     
     # Determine configuration file paths
     config_paths = []
+    
     if args.multi_config:
         # Use both short and long configs automatically
         short_config = os.path.join(script_dir, 'config', 'denied_edge_queries_synthesis_short.yaml')
@@ -511,6 +485,13 @@ def main():
     print(f"📋 Loading configuration(s): {[os.path.basename(cp) for cp in config_paths]}")
     config = load_config(config_paths[0])  # Use first config for debug settings
     
+    # Check API key
+    provider = get_provider_from_config(config)
+    print(f"📡 Using API provider: {provider}")
+    if not check_api_key(config):
+        print(f"❌ ERROR: {get_required_env_var(provider)} environment variable not set")
+        return
+    
     # Debug mode settings
     debug_enabled = args.debug or config.get('debug', {}).get('enabled', False)
     max_companies = args.max_companies or config.get('debug', {}).get('max_companies', 1)
@@ -520,12 +501,6 @@ def main():
         print(f"🐛 Debug mode enabled - processing maximum {max_companies} companies")
         if queries_per_category:
             print(f"🐛 Debug mode: limiting to {queries_per_category} queries per category")
-    
-    # Check API key
-    if not os.getenv('OPENROUTER_API_KEY'):
-        print("❌ ERROR: OPENROUTER_API_KEY environment variable not set")
-        print("Please set your OpenRouter API key in the .env file or environment")
-        return
     
     # Get company names list
     print("🔍 Getting company names...")

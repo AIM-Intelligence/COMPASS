@@ -1,8 +1,16 @@
-anthropic:
+# API Configuration - Change 'provider' to switch between providers
+# Supported providers: openai, anthropic, vertex, openrouter
+api:
+  provider: "anthropic"
   model: "claude-sonnet-4-20250514"
   temperature: 1.0
   max_tokens: 5000
-
+  # Provider-specific settings (optional):
+  # top_p: 1.0                    # For OpenAI/OpenRouter
+  # region: "us-east5"            # For Vertex
+  # project_id: "your-project"    # For Vertex
+  # reasoning_effort: "medium"    # For OpenAI reasoning models
+  
 debug:
   enabled: false
   max_companies: 1

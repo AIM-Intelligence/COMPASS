@@ -9,7 +9,7 @@ import yaml
 import dotenv
 from utils.json_utils import read_jsonl, write_jsonl, append_jsonl
 from utils.string_utils import json_style_str_to_dict
-from utils.vertex_api_utils import create_response_chat
+from utils.unified_api_utils import create_response_chat, get_provider_from_config, check_api_key, get_required_env_var
 
 # Load environment variables
 dotenv.load_dotenv()
@@ -122,19 +122,15 @@ def create_allowed_edge_prompt(config: dict, base_query: str, allowlist_policy: 
     return user_prompt
 
 
-def call_vertex_api(config: dict, prompt: str, max_retries: int = 3) -> str:
-    """Makes API call to Vertex AI."""
-    vertex_config = config['vertex']
+def call_api(config: dict, prompt: str, max_retries: int = 3) -> str:
+    """Makes API call using unified API utils (supports all providers)."""
     
     for attempt in range(max_retries):
         try:
+            # API call (provider selected automatically from config)
             response = create_response_chat(
-                model=vertex_config['model'],
+                config=config,
                 prompt_input=[{"role": "user", "content": prompt}],
-                max_completion_tokens=vertex_config['max_tokens'],
-                temperature=vertex_config['temperature'],
-                region=vertex_config.get('region', 'us-east5'),
-                project_id=vertex_config.get('project_id', 'img-sec'),
                 return_type="string"
             )
             
@@ -174,8 +170,8 @@ def process_single_query(config: dict, query_item: dict, company_policy: dict) -
         
         for trial in range(1, max_trials + 1):
             try:
-                # Call Vertex API
-                response = call_vertex_api(config, prompt)
+                # Call API (provider selected automatically from config)
+                response = call_api(config, prompt)
                 
                 # Parse JSON response
                 try:
@@ -369,6 +365,13 @@ def main():
     print("📋 Loading configuration...")
     config = load_config(config_path)
     
+    # Check API key
+    provider = get_provider_from_config(config)
+    print(f"📡 Using API provider: {provider}")
+    if not check_api_key(config):
+        print(f"❌ ERROR: {get_required_env_var(provider)} environment variable not set")
+        return
+    
     # Debug mode settings
     debug_enabled = args.debug or config.get('debug', {}).get('enabled', False)
     max_companies = args.max_companies or config.get('debug', {}).get('max_companies', 1)
@@ -378,14 +381,6 @@ def main():
         print(f"🐛 Debug mode enabled - processing maximum {max_companies} companies")
         if queries_per_company:
             print(f"🐛 Debug mode: limiting to {queries_per_company} queries per company")
-    
-    # Check API key (for Vertex API)
-    if config['vertex']['model'] == "gemini-2.5-pro":
-        if not os.getenv('VERTEX_API_KEY'):
-            print("❌ ERROR: VERTEX_API_KEY environment variable not set")
-            print("Please set your Vertex API key in the .env file or environment")
-            return
-    # Claude doesn't need API key check as it uses project credentials
     
     # Get company names list
     print("🔍 Getting company names...")

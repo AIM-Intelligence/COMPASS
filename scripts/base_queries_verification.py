@@ -6,7 +6,7 @@ import time
 
 import yaml
 from utils.json_utils import read_json, write_json
-from utils.anthropic_api_utils import create_response_chat
+from utils.unified_api_utils import create_response_chat, get_provider_from_config, check_api_key, get_required_env_var
 from utils.string_utils import response2dict, json_style_str_to_dict
 
 
@@ -67,7 +67,7 @@ def load_company_data(scenario_dir: str, company_name: str) -> dict:
 
 
 def create_messages(config: dict, company_data: dict, query: str) -> list:
-    """Creates message list for Anthropic API call."""
+    """Creates message list for API call."""
     prompt_template = config['prompt_template']
     
     # Replace placeholders with actual data
@@ -92,11 +92,10 @@ def call_policy_matcher_api(config: dict, company_data: dict, query: str, max_tr
     
     for trial in range(1, max_trials + 1):
         try:
+            # API call (provider selected automatically from config)
             response = create_response_chat(
-                model=config['anthropic']['model'],
+                config=config,
                 prompt_input=messages,
-                max_completion_tokens=config['anthropic']['max_tokens'],
-                temperature=config['anthropic']['temperature'],
                 return_type="string"
             )
             
@@ -422,6 +421,13 @@ def main():
     # Load configuration
     print("Loading configuration...")
     config = load_config(config_path)
+    
+    # Check API key
+    provider = get_provider_from_config(config)
+    print(f"📡 Using API provider: {provider}")
+    if not check_api_key(config):
+        print(f"❌ ERROR: {get_required_env_var(provider)} environment variable not set")
+        return
     
     # Debug mode settings
     debug_enabled = args.debug or config.get('debug', {}).get('enabled', False)

@@ -6,7 +6,7 @@ import time
 
 import yaml
 from utils.json_utils import read_json, write_json
-from utils.anthropic_api_utils import create_response_chat
+from utils.unified_api_utils import create_response_chat, get_provider_from_config, check_api_key, get_required_env_var
 from utils.string_utils import response2dict, json_style_str_to_dict
 
 
@@ -107,7 +107,7 @@ def validate_json_structure(parsed_response: dict, company_data: dict) -> bool:
 
 
 def create_messages(config: dict, company_data: dict, company_name: str) -> list:
-    """Creates message list for Anthropic API call."""
+    """Creates message list for API call."""
     # Use new prompt template structure
     prompt_template = config['prompt_template']
     
@@ -148,12 +148,10 @@ def process_company(config: dict, scenario_dir: str, company_name: str, output_d
         print(f"    🔄 Trial {trial}/{max_trials} for {company_name}")
         
         try:
-            # Anthropic API call
+            # API call (provider selected automatically from config)
             response = create_response_chat(
-                model=config['anthropic']['model'],
+                config=config,
                 prompt_input=messages,
-                max_completion_tokens=config['anthropic']['max_tokens'],
-                temperature=config['anthropic']['temperature'],
                 return_type="string"
             )
             
@@ -224,6 +222,13 @@ def main():
     # Load configuration
     print("Loading configuration...")
     config = load_config(config_path)
+    
+    # Check API key
+    provider = get_provider_from_config(config)
+    print(f"📡 Using API provider: {provider}")
+    if not check_api_key(config):
+        print(f"❌ ERROR: {get_required_env_var(provider)} environment variable not set")
+        return
     
     # Debug mode settings
     debug_enabled = args.debug or config.get('debug', {}).get('enabled', False)

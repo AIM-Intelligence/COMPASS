@@ -36,13 +36,40 @@ cp .env.sample .env
 
 #### Required credentials (common)
 
-- **OpenAI judge (default)**: `OPENAI_API_KEY` (used by `scripts/response_judge.py` unless you change the judge config)
-- **OpenRouter (denied_edge synthesis, optional response generation)**: `OPENROUTER_API_KEY` (used by `scripts/denied_edge_queries_synthesis.py`)
-- **Vertex / Anthropic Vertex (allowed_edge synthesis, optional)**:
-  - If you use **Claude on Vertex** via `anthropic[vertex]`, set up **Google Cloud credentials** (e.g., `GOOGLE_APPLICATION_CREDENTIALS`) and ensure your Vertex project/region are configured in the YAML files under `scripts/config/`.
-  - If you use **Gemini via `google-genai`** in this repo, `VERTEX_API_KEY` is required (see `scripts/utils/vertex_api_utils.py`).
+- **OpenAI**: `OPENAI_API_KEY`
+- **Anthropic**: `ANTHROPIC_API_KEY`
+- **OpenRouter**: `OPENROUTER_API_KEY`
+- **Vertex AI (Claude/Gemini)**: `GOOGLE_APPLICATION_CREDENTIALS` or `VERTEX_API_KEY`
 
 > Tip: If you are starting from scratch, you can run **base query generation + verification + response evaluation** first, and add edge/RAG workflows later.
+
+#### Switching API Providers
+
+All synthesis/verification scripts use a **unified API configuration**. You can switch between providers (OpenAI, Anthropic, Vertex, OpenRouter) by editing the `api` section in `scripts/config/*.yaml`:
+
+```yaml
+# Example: scripts/config/base_queries_synthesis.yaml
+api:
+  provider: "anthropic"           # Change to: openai, anthropic, vertex, openrouter
+  model: "claude-sonnet-4-20250514"
+  temperature: 1.0
+  max_tokens: 5000
+  # Provider-specific settings (optional):
+  # top_p: 1.0                    # For OpenAI/OpenRouter
+  # region: "us-east5"            # For Vertex
+  # project_id: "your-project"    # For Vertex
+  # reasoning_effort: "medium"    # For OpenAI reasoning models
+```
+
+**Supported providers:**
+| Provider | `provider` value | Required env variable |
+|----------|-----------------|----------------------|
+| OpenAI | `openai` | `OPENAI_API_KEY` |
+| Anthropic | `anthropic` | `ANTHROPIC_API_KEY` |
+| Vertex AI | `vertex` | `GOOGLE_APPLICATION_CREDENTIALS` or `VERTEX_API_KEY` |
+| OpenRouter | `openrouter` | `OPENROUTER_API_KEY` |
+
+> Note: Structured output features (used in verification scripts) currently only support OpenAI.
 
 ### 2. Testbed Dataset
 
@@ -130,19 +157,35 @@ python scripts/base_queries_verification.py
 `python scripts/base_queries_verification.py --company MyOrg OtherOrg`
 
 **3. Generate Edge Cases (Adversarial/Borderline):**
-```bash
-python scripts/allowed_edge_queries_synthesis.py
-python scripts/denied_edge_queries_synthesis.py
-```
+
 *   `allowed_edge`: Tricky questions that *seem* risky but should be answered.
 *   `denied_edge`: Adversarial attacks (jailbreaks, social engineering) trying to elicit denied info.
+
+```bash
+# allowed_edge - uses default config automatically
+python scripts/allowed_edge_queries_synthesis.py
+
+# denied_edge - requires explicit config file(s)
+python scripts/denied_edge_queries_synthesis.py --config scripts/config/denied_edge_queries_synthesis_short.yaml
+
+# Or use both short and long attack strategies:
+python scripts/denied_edge_queries_synthesis.py --multi_config
+```
+
 *To run a specific company (or multiple):*  
-`python scripts/allowed_edge_queries_synthesis.py --company MyOrg OtherOrg`  
-`python scripts/denied_edge_queries_synthesis.py --company MyOrg OtherOrg`
+```bash
+python scripts/allowed_edge_queries_synthesis.py --company MyOrg OtherOrg
+python scripts/denied_edge_queries_synthesis.py --config scripts/config/denied_edge_queries_synthesis_short.yaml --company MyOrg OtherOrg
+```
+
+> **Note:** `denied_edge_queries_synthesis.py` requires explicit config specification via `--config` or `--multi_config`. Available configs:
+> - `denied_edge_queries_synthesis_short.yaml` - 2 attack strategies per query
+> - `denied_edge_queries_synthesis_long.yaml` - 4 attack strategies per query
+> - `--multi_config` - uses both configs automatically
 
 Prerequisites:
-- `allowed_edge_queries_synthesis.py` uses **Vertex** utilities (see `scripts/utils/vertex_api_utils.py`), so make sure your Vertex/GCP auth is configured.
-- `denied_edge_queries_synthesis.py` calls **OpenRouter**, so you need `OPENROUTER_API_KEY`.
+- Default configs use **Vertex** for `allowed_edge_queries_synthesis.py` and **OpenRouter** for `denied_edge_queries_synthesis.py`.
+- You can change the provider by editing `scripts/config/*.yaml` (see [Switching API Providers](#switching-api-providers)).
 
 **4. Verify Edge Cases:**
 ```bash
@@ -150,9 +193,18 @@ python scripts/allowed_edge_queries_verification.py
 python scripts/denied_edge_queries_verification.py
 ```
 *Validated queries are saved to `scenario/queries/verified_allowed_edge/` and `scenario/queries/verified_denied_edge/`.*
+
 *To run a specific company (or multiple):*  
-`python scripts/allowed_edge_queries_verification.py --company MyOrg OtherOrg`  
-`python scripts/denied_edge_queries_verification.py --company MyOrg OtherOrg`
+```bash
+python scripts/allowed_edge_queries_verification.py --company MyOrg OtherOrg
+python scripts/denied_edge_queries_verification.py --company MyOrg OtherOrg
+```
+
+> **Tip:** Use `--verbose` to see progress during verification. API calls (especially with reasoning models) can take 30+ seconds each, so without `--verbose` the script may appear stuck:
+> ```bash
+> python scripts/denied_edge_queries_verification.py --company MyOrg --verbose
+> ```
+> You can also speed up with parallel processing: `--n_proc 4`
 
 ### Step 3: Run Evaluation
 
@@ -160,18 +212,45 @@ python scripts/denied_edge_queries_verification.py
     You must specify the model, company, and query type. The script will automatically load the verified queries.
 
     ```bash
-    # Example for OpenRouter models
-    python scripts/response_generation_openrouter.py \
-      --model "openai/gpt-4-turbo" \
+    # Using unified script (recommended) - supports all providers
+    python scripts/response_generation.py \
+      --provider "openai" \
+      --model "gpt-4o-2024-11-20" \
+      --company "MyOrg" \
+      --query_type "base"
+    
+    # Or use a config file
+    python scripts/response_generation.py \
+      --config scripts/config/response_generation.yaml \
       --company "MyOrg" \
       --query_type "base"
     ```
+    
+    **Provider options:**
+    ```bash
+    # OpenAI
+    python scripts/response_generation.py --provider openai --model "gpt-4o-2024-11-20" ...
+    
+    # Anthropic
+    python scripts/response_generation.py --provider anthropic --model "claude-sonnet-4-20250514" ...
+    
+    # Vertex (Claude)
+    python scripts/response_generation.py --provider vertex --model "claude-opus-4-1@20250805" \
+      --region "us-east5" --project_id "your-project" ...
+    
+    # OpenRouter
+    python scripts/response_generation.py --provider openrouter --model "openai/gpt-4-turbo" ...
+    ```
+    
     *(Run separately for `base`, `allowed_edge`, and `denied_edge`)*
+    
+    > Note: Legacy provider-specific scripts (`response_generation_openai.py`, `response_generation_openrouter.py`, `response_generation_vertex.py`) are still available for backward compatibility.
 
 2.  **Judge Compliance**: Use an LLM-as-a-Judge to score the responses.
     ```bash
     python scripts/response_judge.py "response_results" -n 5
     ```
+    *The judge uses the config at `scripts/config/response_judge.yaml`. You can change the provider there (currently OpenAI only for structured output).*
 
 3.  **Analyze Results**:
     ```bash
