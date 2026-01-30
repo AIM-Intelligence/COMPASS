@@ -157,7 +157,7 @@ def process_single_query(config: dict, query_item: dict, company_policy: dict) -
     
     # Create multiple results - one for each denylist policy
     results = []
-    base_id = f"Subtle-{query_item['id']}".replace("denylist", "allowlist")
+    base_id = f"allowed_edge-{query_item['id']}".replace("denylist", "allowlist")
     
     # Try each denylist policy as a potential "appears to violate" target
     for allow_policy_name, allow_policy_desc in allowlist_policy.items():
