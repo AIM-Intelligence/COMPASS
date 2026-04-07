@@ -8,6 +8,12 @@
 
 </div>
 
+
+## News
+🎉 04/07/2026: Our paper is accepted at ACL 2026!
+
+---
+
 **COMPASS** is a framework for evaluating **policy alignment**: given only an organization’s policy (e.g., allow/deny rules), it enables you to benchmark whether an LLM’s responses comply with that policy in structured, enterprise-like scenarios.
 
 This repository provides tools to:
