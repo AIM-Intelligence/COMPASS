@@ -112,7 +112,7 @@ def load_stats(paths: list[Path]) -> dict:
                     print(f"WARN: {row['id']} is_correct is not a bool")
                     print(f" {row.get('is_correct')}")
                     print(f"FILE: {path}")
-                    break
+                    continue
                     
                 correct_flag = bool(row.get("is_correct"))
                 bucket = stats[model][category][company]
